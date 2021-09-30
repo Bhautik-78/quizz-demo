@@ -1,0 +1,121 @@
+@media only screen and (min-width: 768px) {
+  .landing_container {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    .preview_tag_container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: darkred;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-top-right-radius: 16px;
+      border-bottom-right-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h6 {
+        margin-bottom: 2px !important;
+      }
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+  
+  .join_list_modal {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fff7f7;
+    padding: 4rem;
+    .cross_icon{
+      position: absolute;
+      right: 2rem;
+      margin-top: -2rem;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .modal_header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      h1 {
+        text-align: center;
+      }
+    }
+    .modal_body {
+      width: 100%;
+      .btn_container {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+  }
+  
+}
+@media only screen and (max-width: 767px) {
+  .landing_container {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    .preview_tag_container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: darkred;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-top-right-radius: 16px;
+      border-bottom-right-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h6 {
+        margin-bottom: 2px !important;
+      }
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+  
+  .join_list_modal {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fff7f7;
+    padding: 2rem;
+    .cross_icon{
+      position: absolute;
+      right: 2rem;
+      margin-top: -1rem;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .modal_header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      h1 {
+        font-size: 24px;
+        text-align: center;
+      }
+    }
+    .modal_body {
+      width: 100%;
+      .btn_container {
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+  }
+  
+}

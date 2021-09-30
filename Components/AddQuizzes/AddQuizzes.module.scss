@@ -1,0 +1,218 @@
+.main_container{
+  width: 70%;
+  margin: 0px auto;
+  padding: 20px;
+  .input{
+    font-weight: 300;
+    font-size: 32px;
+    padding: 0;
+    margin: 40px 0 25px;
+    overflow-wrap: break-word;
+    border: 0px none;
+    width: 100%;
+    background: #eee9e7;
+    text-align: center;
+  }
+  .input:focus, .input:hover {
+    outline: none;
+    box-shadow: 0 0 10px 3px #b3c5c7;
+  }
+  .card_body{
+    padding: 30px 0 10px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 150;
+  }
+  .score_button{
+    float: right;
+    height: 40px;
+    background: #e77b77;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 40px;
+    margin: 1% 20% 0% 0%;
+  }
+  .card{
+    border: unset !important;
+    width: 60%;
+    min-height: 600px;
+    padding-top: 30px;
+    margin: 78px auto 0;
+    display: block;
+    position: relative;
+    font-family: Muli, sans-serif;
+    background: #eee9e7;
+    .add_quiz {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .input_icon{
+    position: relative;
+  }
+  .card_input{
+    background-color: rgba(182,158,144,1);
+    width: 100%;
+    margin: 10px 0;
+    overflow-wrap: break-word;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 15px 0 15px 45px;
+    outline: none;
+    border: 0px none;
+    text-align: left;
+    white-space: pre-line;
+  }
+  .card_icon{
+    position: absolute;
+    top: 23px;
+    right: -9px;
+    background: white;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #00000014;
+  }
+  .table{
+    padding: 30px 30px 0;
+  }
+  .table_td{
+    vertical-align: middle;
+    padding: 8px;
+    line-height: 1.42857143;
+    border-top: 1px solid #ddd;
+  }
+    .table_input{
+    display: inline-block;
+    width: 65%;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    transition: border-color .15s ease-in-out;
+    height: 34px;
+    padding: 6px 12px;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+  }
+  .footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 60px;
+    border-top: 1px solid #ddd;
+    line-height: 60px;
+    padding-left: 15px;
+    background: #fff;
+    z-index: 99;
+  }
+  .save_button{
+    background-color: #e77b77;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 10px 25px;
+    line-height: 15px;
+    transition: all .2s ease-in-out 0s;
+  }
+  .cancel_button{
+    background-color: #fff;
+    color: #e77b77;
+    border: 2px solid #e77b77;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 13px;
+    line-height: 15px;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out 0s;
+  }
+  .add_button{
+    border: 1px dashed #ddd;
+    transition: all .2s ease-out;
+    margin: 1.2vh auto;
+    padding: 5px 10px;
+    border-radius: 25px;
+    background: #d9e2e3;
+  }
+  .add_button:hover{
+    background:  #b3c5c7;
+  }
+  .modelHeader{
+    height: 58px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+  }
+  .h3{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 35px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #30484e;
+    padding: 10px 20px;
+  }
+  .modelBody{
+    position: absolute;
+    overflow: auto;
+    padding-top: 58px;
+    padding-bottom: 60px;
+    height: 100%;
+    width: 100%;
+  }
+  .card_container{
+    width: 100%;
+    border: 2px dashed #ddd;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 3% ;
+    .card_body {
+      width: 80%;
+      border: unset
+    }
+  }
+  .add_button_container{
+    text-align: center;
+  }
+  .imgContainer{
+    height: 30vh;
+    width: 100%;
+    background: #ff504a;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+  }
+  .imgHeaderContainer{
+    width: 40%;
+    height: 3vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    margin-top: -2%;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .i{
+    align-self: center;
+  }
+}
+
+.modal-content{
+  height: 100vh !important
+}
+

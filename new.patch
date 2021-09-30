@@ -1,0 +1,169 @@
+Index: Components/ResultCard/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/ResultCard/index.js	(revision f6e65f179a7a268587da064fcf5ae43e9297defc)
++++ Components/ResultCard/index.js	(date 1632905545489)
+@@ -120,31 +120,31 @@
+     <div className={styles.main_container}>
+       <div>
+         {
+-                    isLoading ? <CardLoader />
+-                      : (
+-                        <Card className={styles.add_quiz}>
+-                          <div className="container-fluid" style={{ width: '90%' }}>
+-                            <div style={{ height: '100%' }}>
+-                              <div>
+-                                <textarea
+-                                  style={{ height }}
+-                                  id="question"
+-                                  onInputCapture={handleChange}
+-                                  onChange={handleChange}
+-                                  name="result"
+-                                  placeholder="result"
+-                                  value={result && result.result}
+-                                  className={styles.input}
+-                                />
+-                                <span
+-                                  style={{ color: 'green' }}
+-                                >
+-                                  {!isNaN(resultText && resultText.split(' ')[1]) ? '' : changes}
+-                                </span>
+-                                <div className={styles.card_container}>
+-                                  <Card className={styles.card_body}>
+-                                    <CardBody>
+-                                      <input
++          isLoading ? <CardLoader />
++            : (
++              <Card className={styles.add_quiz}>
++                <div className="container-fluid" style={{ width: '90%' }}>
++                  <div style={{ height: '100%' }}>
++                    <div>
++                      <textarea
++                        style={{ height }}
++                        id="question"
++                        onInputCapture={handleChange}
++                        onChange={handleChange}
++                        name="result"
++                        placeholder="result"
++                        value={result && result.result}
++                        className={styles.input}
++                      />
++                      <span
++                        style={{ color: 'green' }}
++                      >
++                        {!isNaN(resultText && resultText.split(' ')[1]) ? '' : changes}
++                      </span>
++                      <div className={styles.card_container}>
++                        <Card className={styles.card_body}>
++                          <CardBody>
++                            <input
+                                         type="number"
+                                         onChange={handleChange}
+                                         name="scoreMin"
+@@ -152,7 +152,7 @@
+                                         value={result && result.scoreMin === 0 ? null : result && result.scoreMin}
+                                         className={styles.input}
+                                       />
+-                                      <input
++                            <input
+                                         type="number"
+                                         onChange={handleChange}
+                                         name="scoreMax"
+@@ -160,9 +160,9 @@
+                                         value={result && result.scoreMax === 0 ? null : result && result.scoreMax}
+                                         className={styles.input}
+                                       />
+-                                      <span style={{ color: 'red' }}>{scoreError}</span>
+-                                      <br />
+-                                      <div className={styles.add_button_container}>
++                            <span style={{ color: 'red' }}>{scoreError}</span>
++                            <br />
++                            <div className={styles.add_button_container}>
+                                         <button
+                                           onClick={onEdit}
+                                           className={styles.add_button}
+@@ -170,14 +170,14 @@
+                                           {((result.scoreMin && result.scoreMax) === 0) ? 'Save Result' : 'Edit Result'}
+                                         </button>
+                                       </div>
+-                                    </CardBody>
+-                                  </Card>
+-                                </div>
+-                              </div>
+-                            </div>
+-                          </div>
+-                        </Card>
+-                      )
++                          </CardBody>
++                        </Card>
++                      </div>
++                    </div>
++                  </div>
++                </div>
++              </Card>
++            )
+                 }
+       </div>
+     </div>
+Index: pages/series/[seriesId]/quizzes/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pages/series/[seriesId]/quizzes/index.js	(revision f6e65f179a7a268587da064fcf5ae43e9297defc)
++++ pages/series/[seriesId]/quizzes/index.js	(date 1632905714869)
+@@ -35,7 +35,10 @@
+     const getAllQuizzes = async () => {
+       try {
+         setLoading(true);
+-        const response = await axios.post('/api/sundae/quizzes');
++        const data = {
++          seriesId
++        };
++        const response = await axios.post('/api/sundae/quizzes', data);
+         if (response.data.quizzes) {
+           setQuizzes(response.data.quizzes);
+         } else {
+@@ -176,24 +179,24 @@
+                     accept="image/*"
+                     style={{ width: '100%' }}
+                     onDrop={(acceptedFiles) => {
+-                          setInitialErrors();
+-                          if (acceptedFiles && acceptedFiles.length < 1) {
+-                            setServerErr('Unsupported image -- Must be one of JPG/JPEG/PNG/SVG/GIF format!');
+-                          } else {
+-                            setImgUrl(URL.createObjectURL(acceptedFiles[0]));
+-                            setCoverImg(acceptedFiles[0]);
+-                          }
+-                        }}
++                      setInitialErrors();
++                      if (acceptedFiles && acceptedFiles.length < 1) {
++                        setServerErr('Unsupported image -- Must be one of JPG/JPEG/PNG/SVG/GIF format!');
++                      } else {
++                        setImgUrl(URL.createObjectURL(acceptedFiles[0]));
++                        setCoverImg(acceptedFiles[0]);
++                      }
++                    }}
+                   >
+                     {({ getRootProps, getInputProps }) => (
+-                          <section className="upload-file-container">
+-                                      <div {...getRootProps()}>
+-                                         <input {...getInputProps()} />
+-                                         <img src="/Assets/image.png" />
+-                                         <p>Upload File JPG/JPEG/PNG/SVG/GIF</p>
+-                                       </div>
+-                                    </section>
+-                        )}
++                      <section className="upload-file-container">
++                        <div {...getRootProps()}>
++                          <input {...getInputProps()} />
++                          <img src="/Assets/image.png" />
++                          <p>Upload File JPG/JPEG/PNG/SVG/GIF</p>
++                        </div>
++                      </section>
++                    )}
+                   </Dropzone>
+                   <small className="text-danger pl-2">
+                     {clientErr.coverImg ? clientErr.coverImg : ''}

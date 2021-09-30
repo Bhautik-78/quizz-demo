@@ -1,0 +1,208 @@
+@media only screen and (min-width: 768px) {
+  .webpage_container {
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #fbf7fd;
+    .webpage_content {
+      max-width: 1800px;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      padding: 3rem;
+      .left_sec {
+        max-width: 100%;
+        height: 100%;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        h1 {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 36px;
+          line-height: 47px;
+          color: #000000;
+        }
+        p {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 29px;
+          color: #000000;
+        }
+      }
+      .right_sec {
+        max-width: 100%;
+        height: 100%;
+        padding: 3rem;
+        .list_item {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 1rem;
+          img {
+            max-width: 25px;
+            margin-right: 1rem;
+          }
+          p {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 29px;
+            color: #000000;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .webpage_container {
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #fbf7fd;
+    .webpage_content {
+      max-width: 1800px;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      padding: 1rem;
+      .left_sec {
+        max-width: 100%;
+        height: 100%;
+        padding: 1rem 0 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        h1 {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 36px;
+          line-height: 47px;
+          color: #000000;
+        }
+        p {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 29px;
+          color: #000000;
+        }
+      }
+      .right_sec {
+        max-width: 100%;
+        height: 100%;
+        padding: 1rem;
+        .list_item {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 10px;
+          img {
+            max-width: 25px;
+            margin-right: 1rem;
+          }
+          p {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 29px;
+            color: #000000;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .webpage_container {
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #fbf7fd;
+    .webpage_content {
+      max-width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      padding: 1rem;
+      .left_sec {
+        max-width: 100%;
+        height: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        h1 {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 32px;
+          line-height: 40px;
+          color: #000000;
+          text-align: center;
+        }
+        p {
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 25px;
+          color: #000000;
+          text-align: center;
+          margin-top: 2rem;
+        }
+      }
+      .right_sec {
+        max-width: 100%;
+        height: 100%;
+        padding: 1rem;
+        .list_item {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 10px;
+          img {
+            max-width: 25px;
+            margin-right: 1rem;
+          }
+          p {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 25px;
+            color: #000000;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

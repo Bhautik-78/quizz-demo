@@ -1,0 +1,12 @@
+.sidenav_container{
+    width: 17%;
+    height: calc(100vh - 55px);
+    overflow-y: scroll;
+    position: fixed;
+    margin-top: 55px;
+    ul{
+        li{
+            cursor: pointer;
+        }
+    }
+}

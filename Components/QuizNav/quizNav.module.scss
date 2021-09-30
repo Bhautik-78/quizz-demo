@@ -1,0 +1,43 @@
+.sidenav_container{
+  width: 17%;
+  height: calc(100vh - 55px);
+  overflow-y: scroll;
+  position: fixed;
+  margin-top: 55px;
+  ul{
+    li{
+      cursor: pointer;
+    }
+  }
+}
+
+.question_text{
+  text-overflow: ellipsis;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left : 10px
+}
+
+.question_img{
+  margin-left: 1px
+}
+
+.result_question{
+  text-overflow: ellipsis;
+  width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left : 10px
+}
+
+.result_score{
+  font-size: 12px;
+  background: #e77b77;
+  padding: 0.1rem 0.2rem;
+  border-radius: 5px
+}
+
+.result_img{
+  margin-left: 5px
+}

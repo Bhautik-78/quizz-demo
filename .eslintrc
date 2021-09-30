@@ -1,0 +1,64 @@
+ /* eslint-disable */
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
+    "airbnb"
+  ],
+  "root": true,
+  "parser": "babel-eslint",
+  "rules": {
+    "object-curly-spacing": ["error", "always"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "strict": 1,
+    "no-underscore-dangle": 0,
+    "curly": 0,
+    "no-multi-spaces": 0,
+    "jsx-a11y/label-has-associated-control":0,
+    "react/prop-types": 0,
+    "key-spacing": 0,
+    "no-return-assign": 0,
+    "consistent-return": 0,
+    "no-shadow": 0,
+    "comma-dangle": 0,
+    "no-use-before-define": 0,
+    "no-empty": 0,
+    "new-parens": 0,
+    "no-console": 0,
+    "no-cond-assign": 0,
+    "no-fallthrough": 0,
+    "new-cap": 0,
+    "no-loop-func": 0,
+    "no-unreachable": 0,
+    "no-process-exit": 0,
+    "no-param-reassign": 0,
+    "func-names": 0,
+    "quotes": [1, "single", "avoid-escape"]
+  },
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "commonjs": true
+  },
+  "globals": {
+    "fetch": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": []
+}

@@ -1,0 +1,3478 @@
+Index: Components/SideNavLoader/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/SideNavLoader/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ Components/SideNavLoader/index.js	(date 1632892882316)
+@@ -1,21 +1,21 @@
+-import React from "react"
+-import ContentLoader from "react-content-loader"
++import React from 'react';
++import ContentLoader from 'react-content-loader';
+ 
+ const SideNavLoader = (props) => (
+-    <ContentLoader
+-        speed={2}
+-        width={400}
+-        height={150}
+-        viewBox="0 0 400 150"
+-        backgroundColor="#f3f3f3"
+-        foregroundColor="#ecebeb"
+-        {...props}
+-    >
+-        <rect x="25" y="15" rx="5" ry="5" width="220" height="10" />
+-        <rect x="25" y="45" rx="5" ry="5" width="220" height="10" />
+-        <rect x="25" y="75" rx="5" ry="5" width="220" height="10" />
+-        <rect x="25" y="105" rx="5" ry="5" width="220" height="10" />
+-    </ContentLoader>
+-)
++  <ContentLoader
++    speed={2}
++    width={400}
++    height={150}
++    viewBox="0 0 400 150"
++    backgroundColor="#f3f3f3"
++    foregroundColor="#ecebeb"
++    {...props}
++  >
++    <rect x="25" y="15" rx="5" ry="5" width="260" height="10" />
++    <rect x="25" y="45" rx="5" ry="5" width="260" height="10" />
++    <rect x="25" y="75" rx="5" ry="5" width="260" height="10" />
++    <rect x="25" y="105" rx="5" ry="5" width="260" height="10" />
++  </ContentLoader>
++);
+ 
+-export default SideNavLoader
++export default SideNavLoader;
+Index: yarn.lock
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- yarn.lock	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ yarn.lock	(date 1632896472224)
+@@ -731,6 +731,11 @@
+   resolved "https://registry.yarnpkg.com/attr-accept/-/attr-accept-2.2.2.tgz#646613809660110749e92f2c10833b70968d929b"
+   integrity sha512-7prDjvt9HmqiZ0cl5CRjtS84sEyhsHP2coDkaZKRKVfCDo9s7iw7ChVmar78Gu9pC4SoR/28wFu/G5JJhTnqEg==
+ 
++autosize@^5.0.1:
++  version "5.0.1"
++  resolved "https://innroad.jfrog.io/innroad/api/npm/innroad-npm/autosize/-/autosize-5.0.1.tgz#ed269b0fa9b7eb47627048a1bb3299e99e003a0f"
++  integrity sha1-7SabD6m360dicEihuzKZ6Z4AOg8=
++
+ await-semaphore@^0.1.3:
+   version "0.1.3"
+   resolved "https://registry.yarnpkg.com/await-semaphore/-/await-semaphore-0.1.3.tgz#2b88018cc8c28e06167ae1cdff02504f1f9688d3"
+@@ -3352,6 +3357,11 @@
+     iconv-lite "0.4.24"
+     unpipe "1.0.0"
+ 
++react-content-loader@^6.0.3:
++  version "6.0.3"
++  resolved "https://innroad.jfrog.io/innroad/api/npm/innroad-npm/react-content-loader/-/react-content-loader-6.0.3.tgz#32e28ca7120e0a2552fc26655d0d4448cc1fc0c5"
++  integrity sha1-MuKMpxIOCiVS/CZlXQ1ESMwfwMU=
++
+ react-copy-to-clipboard@^5.0.3:
+   version "5.0.4"
+   resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.4.tgz#42ec519b03eb9413b118af92d1780c403a5f19bf"
+Index: pages/series/[seriesId]/edit.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pages/series/[seriesId]/edit.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ pages/series/[seriesId]/edit.js	(date 1632892632294)
+Index: Components/Layout/Layout.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/Layout/Layout.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ Components/Layout/Layout.js	(date 1632892505244)
+@@ -1,39 +1,39 @@
+ import React from 'react';
+-import {Row, Col} from 'reactstrap';
++import { Row, Col } from 'reactstrap';
+ import TopNav from '../TopNav/TopNav';
+ import SideNav from '../SideNav/SideNav';
+ import styles from './layout.module.scss';
+-import QuizNav from "../QuizNav/QuizNav";
++import QuizNav from '../QuizNav/QuizNav';
+ 
+ const Layout = (props) => (
+-    <div className={styles.layout_container}>
+-        <TopNav/>
+-        {props.isHide ? (
+-            <Row>
+-                <Col sm={12}>
+-                    <div className={styles.child_container}>{props.children}</div>
+-                </Col>
+-            </Row>
+-        ) : props.quizNav ? (
+-            <Row>
+-                <Col sm={2} md={2}>
+-                    <QuizNav flag={props.flag}/>
+-                </Col>
+-                <Col sm={10}>
+-                    <div className={styles.child_container}>{props.children}</div>
+-                </Col>
+-            </Row>
+-        ) : (
+-            <Row>
+-                <Col sm={2} md={2}>
+-                    <SideNav/>
+-                </Col>
+-                <Col sm={10}>
+-                    <div className={styles.child_container}>{props.children}</div>
+-                </Col>
+-            </Row>
+-        )}
+-    </div>
++  <div className={styles.layout_container}>
++    <TopNav />
++    {props.isHide ? (
++      <Row>
++        <Col sm={12}>
++          <div className={styles.child_container}>{props.children}</div>
++        </Col>
++      </Row>
++    ) : props.quizNav ? (
++      <Row>
++        <Col sm={2} md={2}>
++          <QuizNav flag={props.flag} />
++        </Col>
++        <Col sm={10}>
++          <div className={styles.child_container}>{props.children}</div>
++        </Col>
++      </Row>
++    ) : (
++      <Row>
++        <Col sm={2} md={2}>
++          <SideNav />
++        </Col>
++        <Col sm={10}>
++          <div className={styles.child_container}>{props.children}</div>
++        </Col>
++      </Row>
++    )}
++  </div>
+ );
+ 
+ export default Layout;
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- package.json	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ package.json	(date 1632896472230)
+@@ -16,6 +16,7 @@
+     "@stripe/react-stripe-js": "^1.4.0",
+     "@stripe/stripe-js": "^1.14.0",
+     "@zeit/next-source-maps": "0.0.4-canary.1",
++    "autosize": "^5.0.1",
+     "await-semaphore": "^0.1.3",
+     "aws-sdk": "^2.903.0",
+     "axios": "^0.21.1",
+Index: Components/SideNav/SideNav.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/SideNav/SideNav.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ Components/SideNav/SideNav.js	(date 1632892558379)
+Index: Components/EditQuizzes/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/EditQuizzes/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ Components/EditQuizzes/index.js	(date 1632892498776)
+@@ -1,161 +1,164 @@
+-import React, {useEffect, useState} from 'react';
+-import axios from "axios";
+-import styles from "../../pages/series/[seriesId]/episodes/episodes.module.scss";
+-import {Col, CustomInput, Row, Spinner} from "reactstrap";
+-import Dropzone from "react-dropzone";
+-import CardLoader from "../CardLoader";
++import React, { useEffect, useState } from 'react';
++import axios from 'axios';
++import {
++  Col, CustomInput, Row
++} from 'reactstrap';
++import Dropzone from 'react-dropzone';
++import styles from '../../pages/series/[seriesId]/episodes/episodes.module.scss';
++import CardLoader from '../CardLoader';
+ 
+ const EditQuizzes = () => {
+-
+-    const [Id, setId] = useState("");
+-    const [quizze, setQuizzes] = useState({});
+-    const [editQuizz, setEditQuizz] = useState({});
+-    const [serverErr, setServerErr] = useState(null);
+-    const [isLoading, setLoading] = useState(false);
+-    const [imgUrl, setImgUrl] = useState('');
+-    const [isPublished, setPublished] = useState(false);
+-    const [coverImg, setCoverImg] = useState('');
+-    const [clientErr, setClientErr] = useState({
+-        title: '',
+-        coverImg: '',
+-    });
++  const [Id, setId] = useState('');
++  const [quizze, setQuizzes] = useState({});
++  const [editQuizz, setEditQuizz] = useState({});
++  const [serverErr, setServerErr] = useState(null);
++  const [isLoading, setLoading] = useState(false);
++  const [imgUrl, setImgUrl] = useState('');
++  const [isPublished, setPublished] = useState(false);
++  const [coverImg, setCoverImg] = useState('');
++  const [clientErr, setClientErr] = useState({
++    title: '',
++    coverImg: '',
++  });
+ 
+-    useEffect(() => {
+-        const id = window.location.pathname.split('/');
+-        const quizzId = id[4]
+-        setId(quizzId);
++  useEffect(() => {
++    const id = window.location.pathname.split('/');
++    const quizzId = id[4];
++    setId(quizzId);
+ 
+-        const fetchQuizz = async () => {
+-            try {
+-                setLoading(true);
+-                const response = await axios.get(`/api/sundae/quizzes/${quizzId}`);
+-                if (response.data.quiz) {
+-                    setQuizzes(response.data.quiz)
+-                    setEditQuizz({title: response.data.quiz.title})
+-                    setImgUrl(response.data.quiz.imageUrl);
+-                    setPublished(response.data.quiz.isPublished)
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                }
+-                setLoading(false);
+-            } catch (e) {
+-                setLoading(false);
+-                setServerErr('Some server Error');
+-            }
+-        };
+-        fetchQuizz()
+-    }, []);
++    const fetchQuizz = async () => {
++      try {
++        setLoading(true);
++        const response = await axios.get(`/api/sundae/quizzes/${quizzId}`);
++        if (response.data.quiz) {
++          setQuizzes(response.data.quiz);
++          setEditQuizz({ title: response.data.quiz.title });
++          setImgUrl(response.data.quiz.imageUrl);
++          setPublished(response.data.quiz.isPublished);
++        } else {
++          setServerErr(response.data.errorMessage);
++        }
++        setLoading(false);
++      } catch (e) {
++        setLoading(false);
++        setServerErr('Some server Error');
++      }
++    };
++    fetchQuizz();
++  }, []);
+ 
+-    const handleChange = (e) => {
+-        const {name, value} = e.target;
+-        setEditQuizz({...editQuizz, [name]: value})
+-    };
++  const handleChange = (e) => {
++    const { name, value } = e.target;
++    setEditQuizz({ ...editQuizz, [name]: value });
++  };
+ 
+-    const setInitialErrors = () => {
+-        setClientErr({
+-            title: '',
+-            coverImg: '',
+-        });
+-    };
++  const setInitialErrors = () => {
++    setClientErr({
++      title: '',
++      coverImg: '',
++    });
++  };
+ 
+-    const onEdit = async () => {
+-        try {
+-            const data = {
+-                title: editQuizz.title,
+-                imageUrl: imgUrl,
+-                isPublished: isPublished
+-            };
+-            setLoading(true);
+-            const response = await axios.post(`/api/sundae/quizzes/${Id}/edit`, data);
+-            if (response.data.quiz) {
+-                setLoading(false);
+-            } else {
+-                setServerErr(response.data.errorMessage);
+-            }
+-            setLoading(false);
+-        } catch (e) {
+-            setLoading(false);
+-            setServerErr('Some server Error');
+-        }
+-    };
++  const onEdit = async () => {
++    try {
++      const data = {
++        title: editQuizz.title,
++        imageUrl: imgUrl,
++        isPublished
++      };
++      setLoading(true);
++      const response = await axios.post(`/api/sundae/quizzes/${Id}/edit`, data);
++      if (response.data.quiz) {
++        setLoading(false);
++      } else {
++        setServerErr(response.data.errorMessage);
++      }
++      setLoading(false);
++    } catch (e) {
++      setLoading(false);
++      setServerErr('Some server Error');
++    }
++  };
+ 
+-    return (
+-        <div className={styles.episodes_container}>
+-            {
+-                isLoading ? <CardLoader/> :
++  return (
++    <div className={styles.episodes_container}>
++      {
++                isLoading ? <CardLoader />
++                  : (
+                     <div>
+-                        <div className={styles.add_episode_container}>
+-                            <div className="form-input-container">
+-                                <label>Name</label>
+-                                <input
+-                                    name="title"
+-                                    type="text"
+-                                    placeholder="Enter Title"
+-                                    value={editQuizz && editQuizz.title}
+-                                    onChange={handleChange}
+-                                />
+-                            </div>
+-                        </div>
+-                        <div className="form-input-container">
+-                            <label>Cover Image</label>
+-                            <Row className="w-100">
+-                                <Col sm={12} md={7}>
+-                                    <Dropzone
+-                                        accept="image/*"
+-                                        style={{width: '100%'}}
+-                                        onDrop={(acceptedFiles) => {
+-                                            console.log(acceptedFiles);
+-                                            setInitialErrors();
+-                                            if (acceptedFiles && acceptedFiles.length < 1) {
+-                                                setServerErr('Unsupported image -- Must be one of JPG/JPEG/PNG/SVG/GIF format!');
+-                                            } else {
+-                                                setImgUrl(URL.createObjectURL(acceptedFiles[0]));
+-                                                setCoverImg(acceptedFiles[0]);
+-                                            }
+-                                        }}
+-                                    >
+-                                        {({getRootProps, getInputProps}) => (
+-                                            <section className="upload-file-container">
+-                                                <div {...getRootProps()}>
+-                                                    <input {...getInputProps()} />
+-                                                    <img src="/Assets/image.png"/>
+-                                                    <p>Upload File JPG/JPEG/PNG/SVG/GIF</p>
+-                                                </div>
+-                                            </section>
+-                                        )}
+-                                    </Dropzone>
+-                                    <small className="text-danger pl-2">
+-                                        {clientErr.coverImg ? clientErr.coverImg : ''}
+-                                    </small>
+-                                </Col>
+-                                <Col sm={12} md={5}>
+-                                    <div className="preview-container">
+-                                        {imgUrl ? <img src={imgUrl}/> : ''}
+-                                    </div>
+-                                </Col>
+-                            </Row>
+-                        </div>
+-                        <div className="form-input-container">
+-                            <CustomInput
+-                                type="switch"
+-                                id="is_published"
+-                                name="customSwitch"
+-                                label="Publish"
+-                                value={isPublished}
+-                                checked={isPublished ? 'checked' : ''}
+-                                onChange={(e) => {
+-                                    setInitialErrors();
+-                                    setPublished(!isPublished);
+-                                }}
+-                            />
+-                        </div>
+-                        <div>
+-                            <button className="btn btn-dark" onClick={onEdit}>Edit Quiz</button>
+-                        </div>
++                      <div className={styles.add_episode_container}>
++                        <div className="form-input-container">
++                          <label>Name</label>
++                          <input
++                            name="title"
++                            type="text"
++                            placeholder="Enter Title"
++                            value={editQuizz && editQuizz.title}
++                            onChange={handleChange}
++                          />
++                        </div>
++                      </div>
++                      <div className="form-input-container">
++                        <label>Cover Image</label>
++                        <Row className="w-100">
++                          <Col sm={12} md={7}>
++                            <Dropzone
++                              accept="image/*"
++                              style={{ width: '100%' }}
++                              onDrop={(acceptedFiles) => {
++                                console.log(acceptedFiles);
++                                setInitialErrors();
++                                if (acceptedFiles && acceptedFiles.length < 1) {
++                                  setServerErr('Unsupported image -- Must be one of JPG/JPEG/PNG/SVG/GIF format!');
++                                } else {
++                                  setImgUrl(URL.createObjectURL(acceptedFiles[0]));
++                                  setCoverImg(acceptedFiles[0]);
++                                }
++                              }}
++                            >
++                              {({ getRootProps, getInputProps }) => (
++                                <section className="upload-file-container">
++                                    <div {...getRootProps()}>
++                <input {...getInputProps()} />
++                <img src="/Assets/image.png" />
++                <p>Upload File JPG/JPEG/PNG/SVG/GIF</p>
++              </div>
++                                  </section>
++                              )}
++                            </Dropzone>
++                            <small className="text-danger pl-2">
++                              {clientErr.coverImg ? clientErr.coverImg : ''}
++                            </small>
++                          </Col>
++                          <Col sm={12} md={5}>
++                            <div className="preview-container">
++                              {imgUrl ? <img src={imgUrl} /> : ''}
++                            </div>
++                          </Col>
++                        </Row>
++                      </div>
++                      <div className="form-input-container">
++                        <CustomInput
++                          type="switch"
++                          id="is_published"
++                          name="customSwitch"
++                          label="Publish"
++                          value={isPublished}
++                          checked={isPublished ? 'checked' : ''}
++                          onChange={(e) => {
++                            setInitialErrors();
++                            setPublished(!isPublished);
++                          }}
++                        />
++                      </div>
++                      <div>
++                        <button className="btn btn-dark" onClick={onEdit}>Edit Quiz</button>
++                      </div>
+                     </div>
++                  )
+             }
+-        </div>
+-    )
++    </div>
++  );
+ };
+ 
+ export default EditQuizzes;
+Index: pages/series/[seriesId]/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pages/series/[seriesId]/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ pages/series/[seriesId]/index.js	(date 1632892662249)
+@@ -1,31 +1,31 @@
+-import React,{useEffect, useState} from "react";
+-import Head from "next/dist/next-server/lib/head";
+-import Layout from "../../../Components/Layout/Layout";
+-import {Button} from "reactstrap";
+-import styles from "./episodes/episodes.module.scss";
+-import {useRouter} from "next/router";
++import React, { useEffect, useState } from 'react';
++import Head from 'next/dist/next-server/lib/head';
++import { Button } from 'reactstrap';
++import { useRouter } from 'next/router';
++import Layout from '../../../Components/Layout/Layout';
++import styles from './episodes/episodes.module.scss';
+ 
+-const SeriesId = (props) => {
+-    const router = useRouter();
+-    const { title } = router.query;
+-    const [seriesId, setSeriesId] = useState("");
++const SeriesId = () => {
++  const router = useRouter();
++  const { title } = router.query;
++  const [seriesId, setSeriesId] = useState('');
+ 
+-    useEffect(() => {
+-        const seriesId = window.location.pathname.split("/")[2]
+-        setSeriesId(seriesId)
+-    },[]);
++  useEffect(() => {
++    const seriesId = window.location.pathname.split('/')[2];
++    setSeriesId(seriesId);
++  }, []);
+ 
+-    return(
+-        <Layout>
+-            <Head>
+-                <title>Sundae - SeriesId</title>
+-            </Head>
+-            <div className={styles.episodes_container}>
+-                <Button color="primary" style={{marginLeft : "10px"}} onClick={() => router.push(`/series/${seriesId}/quizzes`)}>Quiz</Button>
+-                <Button color="primary" style={{marginLeft : "10px"}} onClick={() => router.push(`/series/${seriesId}/episodes?series=${title}`)}>Episode</Button>
+-            </div>
+-        </Layout>
+-    )
++  return (
++    <Layout>
++      <Head>
++        <title>Sundae - SeriesId</title>
++      </Head>
++      <div className={styles.episodes_container}>
++        <Button color="primary" style={{ marginLeft : '10px' }} onClick={() => router.push(`/series/${seriesId}/quizzes`)}>Quiz</Button>
++        <Button color="primary" style={{ marginLeft : '10px' }} onClick={() => router.push(`/series/${seriesId}/episodes?series=${title}`)}>Episode</Button>
++      </div>
++    </Layout>
++  );
+ };
+ 
+ export default SeriesId;
+Index: Components/ResultCard/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/ResultCard/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ Components/ResultCard/index.js	(date 1632900716587)
+@@ -1,164 +1,187 @@
+-import React, {useEffect, useState} from 'react';
+-import styles from "./resultCard.module.scss";
+-import {Card, CardBody, Spinner} from "reactstrap";
+-import axios from "axios";
+-import {useRouter} from "next/router";
+-import CardLoader from "../CardLoader";
++import React, { useEffect, useState } from 'react';
++import { Card, CardBody } from 'reactstrap';
++import axios from 'axios';
++import { useRouter } from 'next/router';
++import styles from './resultCard.module.scss';
++import CardLoader from '../CardLoader';
+ 
+ const ResultCard = (props) => {
+-    const router = useRouter();
+-    const {flag, setFlag} = props;
+-    const [id, setId] = useState([{
+-        quizId: "",
+-        resultId: "",
+-        seriesId : ""
+-    }]);
+-    const [isLoading, setLoading] = useState(false);
+-    const [serverErr, setServerErr] = useState(null);
+-    const [result, setResult] = useState({});
+-    const [resultText, setResultText] = useState("");
+-    const [defaultFlag, setDefaultFlag] = useState(false);
+-    const [scoreError, setScoreError] = useState("");
+-    const [changes, setChanges] = useState("");
+-    const [height, setHeight] = useState("48px");
++  const router = useRouter();
++  const { flag, setFlag } = props;
++  const [id, setId] = useState([{
++    quizId: '',
++    resultId: '',
++    seriesId : ''
++  }]);
++  const [isLoading, setLoading] = useState(false);
++  const [serverErr, setServerErr] = useState(null);
++  const [result, setResult] = useState({});
++  const [resultText, setResultText] = useState('');
++  const [defaultFlag, setDefaultFlag] = useState(false);
++  const [scoreError, setScoreError] = useState('');
++  const [changes, setChanges] = useState('');
++  const [height, setHeight] = useState('48px');
+ 
+-    useEffect(() => {
+-        const seriesId = window.location.pathname.split('/')[2];
+-        const quizId = window.location.pathname.split('/')[4];
+-        const resultId = window.location.pathname.split('/')[6];
+-        setId({quizId, resultId, seriesId});
+-        const getResult = async () => {
+-            try {
+-                setLoading(true);
+-                const response = await axios.get(`/api/sundae/quizzes/${quizId}/quizResult/${resultId}`);
+-                if (response.data.quizResult) {
+-                    const f = (response.data.quizResult.result).split(" ");
+-                    const d = !isNaN(f[1]);
+-                    !d ? setResult(response.data.quizResult) : setResult({
+-                        ...result,
+-                        result: "",
+-                        scoreMin: response.data.quizResult.scoreMin,
+-                        scoreMax: response.data.quizResult.scoreMax
+-                    })
+-                    setResultText(response.data.quizResult.result)
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                }
+-                setLoading(false);
+-            } catch (e) {
+-                setLoading(false);
+-                setServerErr('Some server Error');
+-            }
+-        };
+-        getResult()
+-    }, [router.asPath, defaultFlag]);
++  useEffect(() => {
++    const seriesId = window.location.pathname.split('/')[2];
++    const quizId = window.location.pathname.split('/')[4];
++    const resultId = window.location.pathname.split('/')[6];
++    setId({ quizId, resultId, seriesId });
++    const getResult = async () => {
++      try {
++        setLoading(true);
++        const response = await axios.get(`/api/sundae/quizzes/${quizId}/quizResult/${resultId}`);
++        if (response.data.quizResult) {
++          const f = (response.data.quizResult.result).split(' ');
++          const d = !isNaN(f[1]);
++          !d ? setResult(response.data.quizResult) : setResult({
++            ...result,
++            result: '',
++            scoreMin: response.data.quizResult.scoreMin,
++            scoreMax: response.data.quizResult.scoreMax
++          });
++          setResultText(response.data.quizResult.result);
++        } else {
++          setServerErr(response.data.errorMessage);
++        }
++        setLoading(false);
++      } catch (e) {
++        setLoading(false);
++        setServerErr('Some server Error');
++      }
++    };
++    getResult();
++  }, [router.asPath, defaultFlag]);
+ 
+-    useEffect(() => {
+-        const tx = document.getElementsByTagName("textarea");
+-        for (let i = 0; i < tx.length; i++) {
+-            if (tx[i].value === '') {
+-                tx[i].setAttribute("style", "height:" + {height} + ";overflow-y:hidden;");
+-            } else {
+-                tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+-            }
+-            tx[i].addEventListener("input", OnInput, false);
+-        }
++  useEffect(() => {
++    const tx = document.getElementsByTagName('textarea');
++    for (let i = 0; i < tx.length; i++) {
++      if (tx[i].value === '') {
++        tx[i].setAttribute('style', `height:${{ height }};overflow-y:hidden;`);
++      } else {
++        tx[i].setAttribute('style', `height:${tx[i].scrollHeight}px;overflow-y:hidden;`);
++      }
++      tx[i].addEventListener('input', OnInput, false);
++    }
+ 
+-        function OnInput(e) {
+-            this.style.height = "auto";
+-            this.style.height = (this.scrollHeight) + "px";
+-            setHeight((this.scrollHeight) + "px")
+-        }
+-    }, []);
++    function OnInput() {
++      this.style.height = 'auto';
++      this.style.height = `${this.scrollHeight}px`;
++      setHeight(`${this.scrollHeight}px`);
++    }
++  }, []);
+ 
+-    const handleChange = (e) => {
+-        const {name, value} = e.target;
+-        if (name === 'result') {
+-            if (value !== resultText) {
+-                setChanges("There New Changes")
+-            } else {
+-                setChanges("")
+-            }
+-        }
+-        const result1 = JSON.parse(JSON.stringify(result))
+-        setResult({...result1, [name]: value})
+-    };
++  const handleChange = (e) => {
++    const { name, value } = e.target;
++    if (name === 'result') {
++      if (value !== resultText) {
++        setChanges('There New Changes');
++      } else {
++        setChanges('');
++      }
++    }
++    const result1 = JSON.parse(JSON.stringify(result));
++    setResult({ ...result1, [name]: value });
++  };
+ 
+-    const onEdit = async () => {
+-        try {
+-            const data = {
+-                result: result.result,
+-                scoreMin: result.scoreMin,
+-                scoreMax: result.scoreMax
+-            };
+-            if (Number(result && result.scoreMax) > Number(result && result.scoreMin)) {
+-                setLoading(true);
+-                const response = await axios.post(`/api/sundae/quizzes/${id.quizId}/quizResult/${id.resultId}/edit`, data);
+-                if (response.data.updateQuizResult) {
+-                    setResult(response.data.updateQuizResult);
+-                    setDefaultFlag(true);
+-                    setFlag(!flag);
+-                    setScoreError("")
+-                    setChanges("")
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                    setLoading(false);
+-                }
+-                setLoading(false);
+-            } else {
+-                setScoreError("Score max is less than to Score min");
+-                return true
+-            }
+-        } catch (e) {
+-            setScoreError("");
+-            setLoading(false);
+-            setServerErr('Some server Error');
+-        }
+-    };
++  const onEdit = async () => {
++    try {
++      const data = {
++        result: result.result,
++        scoreMin: result.scoreMin,
++        scoreMax: result.scoreMax
++      };
++      if (Number(result && result.scoreMax) > Number(result && result.scoreMin)) {
++        setLoading(true);
++        const response = await axios.post(`/api/sundae/quizzes/${id.quizId}/quizResult/${id.resultId}/edit`, data);
++        if (response.data.updateQuizResult) {
++          setResult(response.data.updateQuizResult);
++          setDefaultFlag(true);
++          setFlag(!flag);
++          setScoreError('');
++          setChanges('');
++        } else {
++          setServerErr(response.data.errorMessage);
++          setLoading(false);
++        }
++        setLoading(false);
++      } else {
++        setScoreError('Score max is less than to Score min');
++        return true;
++      }
++    } catch (e) {
++      setScoreError('');
++      setLoading(false);
++      setServerErr('Some server Error');
++    }
++  };
+ 
+-    return (
+-        <div className={styles.main_container}>
+-            <div>
+-                {
+-                    isLoading ? <CardLoader/> :
++  return (
++    <div className={styles.main_container}>
++      <div>
++        {
++                    isLoading ? <CardLoader />
++                      : (
+                         <Card className={styles.add_quiz}>
+-                            <div className="container-fluid" style={{width: "90%"}}>
+-                                <div style={{height: "100%"}}>
+-                                    <div>
+-                                            <textarea style={{height: height}} id="question"
+-                                                      onInputCapture={handleChange} onChange={handleChange}
+-                                                      name="result" placeholder="result" value={result && result.result}
+-                                                      className={styles.input}/>
+-                                        <span
+-                                            style={{color: "green"}}>{!isNaN(resultText && resultText.split(" ")[1]) ? "" : changes}</span>
+-                                        <div className={styles.card_container}>
+-                                            <Card className={styles.card_body}>
+-                                                <CardBody>
+-                                                    <input type="number" onChange={handleChange} name="scoreMin"
+-                                                           placeholder="Score min"
+-                                                           value={result && result.scoreMin === 0 ? null : result && result.scoreMin}
+-                                                           className={styles.input}/>
+-                                                    <input type="number" onChange={handleChange} name="scoreMax"
+-                                                           placeholder="Score max"
+-                                                           value={result && result.scoreMax === 0 ? null : result && result.scoreMax}
+-                                                           className={styles.input}/>
+-                                                    <span style={{color: "red"}}>{scoreError}</span>
+-                                                    <br/>
+-                                                    <div className={styles.add_button_container}>
+-                                                        <button onClick={onEdit}
+-                                                                className={styles.add_button}>{((result.scoreMin && result.scoreMax) === 0) ? "Save Result" : "Edit Result"}</button>
+-                                                    </div>
+-                                                </CardBody>
+-                                            </Card>
+-                                        </div>
+-                                    </div>
+-                                </div>
+-                            </div>
++                          <div className="container-fluid" style={{ width: '90%' }}>
++                            <div style={{ height: '100%' }}>
++                              <div>
++                                <textarea
++                                  style={{ height }}
++                                  id="question"
++                                  onInputCapture={handleChange}
++                                  onChange={handleChange}
++                                  name="result"
++                                  placeholder="result"
++                                  value={result && result.result}
++                                  className={styles.input}
++                                />
++                                <span
++                                  style={{ color: 'green' }}
++                                >
++                                  {!isNaN(resultText && resultText.split(' ')[1]) ? '' : changes}
++                                </span>
++                                <div className={styles.card_container}>
++                                  <Card className={styles.card_body}>
++                                    <CardBody>
++                                      <input
++                                        type="number"
++                                        onChange={handleChange}
++                                        name="scoreMin"
++                                        placeholder="Score min"
++                                        value={result && result.scoreMin === 0 ? null : result && result.scoreMin}
++                                        className={styles.input}
++                                      />
++                                      <input
++                                        type="number"
++                                        onChange={handleChange}
++                                        name="scoreMax"
++                                        placeholder="Score max"
++                                        value={result && result.scoreMax === 0 ? null : result && result.scoreMax}
++                                        className={styles.input}
++                                      />
++                                      <span style={{ color: 'red' }}>{scoreError}</span>
++                                      <br />
++                                      <div className={styles.add_button_container}>
++                                        <button
++                                          onClick={onEdit}
++                                          className={styles.add_button}
++                                        >
++                                          {((result.scoreMin && result.scoreMax) === 0) ? 'Save Result' : 'Edit Result'}
++                                        </button>
++                                      </div>
++                                    </CardBody>
++                                  </Card>
++                                </div>
++                              </div>
++                            </div>
++                          </div>
+                         </Card>
++                      )
+                 }
+-            </div>
+-        </div>
+-    )
++      </div>
++    </div>
++  );
+ };
+ 
+ export default ResultCard;
+Index: Components/AddQuizzes/AddQuizzes.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/AddQuizzes/AddQuizzes.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ Components/AddQuizzes/AddQuizzes.js	(date 1632900738766)
+@@ -1,466 +1,511 @@
+-import {useRouter} from "next/router";
+-import React, {useState, useEffect} from 'react';
+-import {Card, CardBody, ModalHeader, Table, ModalBody, ModalFooter, Button, Modal, Input, Spinner} from 'reactstrap';
+-import styles from "./AddQuizzes.module.scss";
+-import axios from "axios";
+-import CardLoader from "../CardLoader";
++import { useRouter } from 'next/router';
++import React, { useState, useEffect } from 'react';
++import {
++  Card, CardBody, ModalHeader, Table, ModalBody, ModalFooter, Button, Modal, Input, Spinner
++} from 'reactstrap';
++import axios from 'axios';
++import styles from './AddQuizzes.module.scss';
++import CardLoader from '../CardLoader';
+ 
+ const AddQuizzes = (props) => {
+-    const {flag, setFlag, placeFlag} = props;
+-    const router = useRouter();
+-    const [id, setId] = useState({
+-        QuizId: "",
+-        QuestionId: ""
+-    });
+-    const [isOpen, setOpen] = useState(false);
+-    const [quizzes, setQuizzes] = useState({});
+-    const [question, setQuestion] = useState({});
+-    const [localOption, setLocalOption] = useState([]);
+-    const [answer, setAnswer] = useState([{value: "", score: 0, optionId: ""}, {value: "", score: 0, optionId: ""}]);
+-    const [dummyAnswer, setDummyAnswer] = useState([]);
+-    const [serverErr, setServerErr] = useState(null);
+-    const [isLoading, setLoading] = useState(false);
+-    const [multiAns, setMultiAns] = useState(false);
+-    const [deleteFlag, setDeleteFlag] = useState(false);
+-    const [defaultFlag, setDefaultFlag] = useState(false);
+-    const [changes, setChanges] = useState("");
+-    const [height, setHeight] = useState("48px");
++  const { flag, setFlag } = props;
++  const router = useRouter();
++  const [id, setId] = useState({
++    QuizId: '',
++    QuestionId: ''
++  });
++  const [isOpen, setOpen] = useState(false);
++  const [quizzes, setQuizzes] = useState({});
++  const [question, setQuestion] = useState({});
++  const [localOption, setLocalOption] = useState([]);
++  const [answer, setAnswer] = useState([{ value: '', score: 0, optionId: '' }, { value: '', score: 0, optionId: '' }]);
++  const [dummyAnswer, setDummyAnswer] = useState([]);
++  const [serverErr, setServerErr] = useState(null);
++  const [isLoading, setLoading] = useState(false);
++  const [multiAns, setMultiAns] = useState(false);
++  const [deleteFlag, setDeleteFlag] = useState(false);
++  const [defaultFlag, setDefaultFlag] = useState(false);
++  const [changes, setChanges] = useState('');
++  const [height, setHeight] = useState('48px');
+ 
+-    useEffect(() => {
+-        let QuizId = "";
+-        let QuestionId = "";
+-        const id = window.location.pathname.split('/');
+-        if (id.length === 7) {
+-            QuizId = id[4];
+-            QuestionId = id[6]
+-        } else {
+-            QuizId = id[4];
+-            QuestionId = props && props.question[0] && props.question[0].id || ""
+-        }
+-        setId({QuizId, QuestionId});
+-        const getQuestion = async () => {
+-            try {
+-                setLoading(true);
+-                if (QuestionId === "") {
+-                    const response = await axios.get(`/api/sundae/quizzes/${QuizId}`);
+-                    if (response.data.quiz) {
+-                        QuestionId = response.data.quiz.questions[0].id;
+-                        setId({QuestionId})
+-                    }
+-                }
+-                const response = await axios.get(`/api/sundae/quizzes/${QuizId}/questions/${QuestionId}`);
+-                if (response && response.data && response.data.question) {
+-                    const f = (response.data.question.questionText).split(" ");
+-                    const d = !isNaN(f[1]);
+-                    // placeFlag ? ( defaultFlag ?  setQuizzes({...quizzes, question: response.data.question.questionText}) : setQuizzes({...quizzes, question: ""})) : (setQuizzes({...quizzes, question: ""}))
+-                    !d ? (setQuizzes({
+-                        ...quizzes,
+-                        question: response.data.question.questionText
+-                    })) : (setQuizzes({...quizzes, question: ""}));
+-                    setQuestion(response.data.question);
+-                    const option = response && response.data && response.data.question.options;
+-                    let result = [];
+-                    answer.forEach((item, index) => {
+-                        option.forEach((x, i) => {
+-                            if (index === i && x.optionText === item.value) {
+-                                result.push(item)
+-                            }
+-                        })
+-                    });
+-                    let modifyAnswer = result;
+-                    if (option.length > 0) {
+-                        for (const [index, item] of option.entries()) {
+-                            modifyAnswer[index] = {
+-                                ...item,
+-                                value: item.optionText,
+-                                score: item.score,
+-                                optionId: item.id
+-                            };
+-                        }
+-                        const d = localOption.concat(JSON.parse(JSON.stringify(modifyAnswer)))
+-                        setAnswer(d)
+-                        const f = localOption.concat(option)
+-                        setDummyAnswer(f)
+-                    } else {
+-                        setAnswer([{value: "", score: 0, optionId: ""}, {value: "", score: 0, optionId: ""}])
+-                    }
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                }
+-                setLoading(false);
+-            } catch (e) {
+-                setLoading(false);
+-                setServerErr('Some server Error');
+-            }
+-        };
+-        getQuestion();
+-    }, [router.asPath, deleteFlag, defaultFlag, flag, localOption]);
++  useEffect(() => {
++    let QuizId = '';
++    let QuestionId = '';
++    const id = window.location.pathname.split('/');
++    if (id.length === 7) {
++      QuizId = id[4];
++      QuestionId = id[6];
++    } else {
++      QuizId = id[4];
++      QuestionId = props && props.question[0] && props.question[0].id || '';
++    }
++    setId({ QuizId, QuestionId });
++    const getQuestion = async () => {
++      try {
++        setLoading(true);
++        if (QuestionId === '') {
++          const response = await axios.get(`/api/sundae/quizzes/${QuizId}`);
++          if (response.data.quiz) {
++            QuestionId = response.data.quiz.questions[0].id;
++            setId({ QuestionId });
++          }
++        }
++        const response = await axios.get(`/api/sundae/quizzes/${QuizId}/questions/${QuestionId}`);
++        if (response && response.data && response.data.question) {
++          const f = (response.data.question.questionText).split(' ');
++          const d = !isNaN(f[1]);
++          !d ? (setQuizzes({
++            ...quizzes,
++            question: response.data.question.questionText
++          })) : (setQuizzes({ ...quizzes, question: '' }));
++          setQuestion(response.data.question);
++          const option = response && response.data && response.data.question.options;
++          const result = [];
++          answer.forEach((item, index) => {
++            option.forEach((x, i) => {
++              if (index === i && x.optionText === item.value) {
++                result.push(item);
++              }
++            });
++          });
++          const modifyAnswer = result;
++          if (option.length > 0) {
++            for (const [index, item] of option.entries()) {
++              modifyAnswer[index] = {
++                ...item,
++                value: item.optionText,
++                score: item.score,
++                optionId: item.id
++              };
++            }
++            const d = localOption.concat(JSON.parse(JSON.stringify(modifyAnswer)));
++            setAnswer(d);
++            const f = localOption.concat(option);
++            setDummyAnswer(f);
++          } else {
++            setAnswer([{ value: '', score: 0, optionId: '' }, { value: '', score: 0, optionId: '' }]);
++          }
++        } else {
++          setServerErr(response.data.errorMessage);
++        }
++        setLoading(false);
++      } catch (e) {
++        setLoading(false);
++        setServerErr('Some server Error');
++      }
++    };
++    getQuestion();
++  }, [router.asPath, deleteFlag, defaultFlag, flag, localOption]);
+ 
+-    useEffect(() => {
+-        const tx = document.getElementsByTagName("textarea");
+-        for (let i = 0; i < tx.length; i++) {
+-            if (tx[i].value === '') {
+-                tx[i].setAttribute("style", "height:" + {height} + ";overflow-y:hidden;");
+-            } else {
+-                tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+-            }
+-            tx[i].addEventListener("input", OnInput, false);
+-        }
++  useEffect(() => {
++    const tx = document.getElementsByTagName('textarea');
++    for (let i = 0; i < tx.length; i++) {
++      if (tx[i].value === '') {
++        tx[i].setAttribute('style', `height:${{ height }};overflow-y:hidden;`);
++      } else {
++        tx[i].setAttribute('style', `height:${tx[i].scrollHeight}px;overflow-y:hidden;`);
++      }
++      tx[i].addEventListener('input', OnInput, false);
++    }
+ 
+-        function OnInput(e) {
+-            this.style.height = "auto";
+-            this.style.height = (this.scrollHeight) + "px";
+-            setHeight((this.scrollHeight) + "px")
+-        }
+-    }, []);
++    function OnInput() {
++      this.style.height = 'auto';
++      this.style.height = `${this.scrollHeight}px`;
++      setHeight(`${this.scrollHeight}px`);
++    }
++  }, []);
+ 
+-    const handelCheckboxChange = (e) => {
+-        const checked = e.target.checked;
+-        setMultiAns(checked)
+-    };
++  const handelCheckboxChange = (e) => {
++    const { checked } = e.target;
++    setMultiAns(checked);
++  };
+ 
+-    const onQuestionChange = (e) => {
+-        const {name, value} = e.target;
+-        if (name === 'question') {
+-            if (value !== question.questionText) {
+-                setChanges("There New Changes")
+-            } else {
+-                setChanges("")
+-            }
+-        }
+-        const quizzes1 = JSON.parse(JSON.stringify(quizzes))
+-        setQuizzes({...quizzes1, [name]: value})
+-    };
++  const onQuestionChange = (e) => {
++    const { name, value } = e.target;
++    if (name === 'question') {
++      if (value !== question.questionText) {
++        setChanges('There New Changes');
++      } else {
++        setChanges('');
++      }
++    }
++    const quizzes1 = JSON.parse(JSON.stringify(quizzes));
++    setQuizzes({ ...quizzes1, [name]: value });
++  };
+ 
+-    const onAnswerChange = (e, i) => {
+-        const {name, value} = e.target;
+-        answer[i].value = value;
+-        setAnswer([...answer])
+-    };
++  const onAnswerChange = (e, i) => {
++    const { name, value } = e.target;
++    answer[i].value = value;
++    setAnswer([...answer]);
++  };
+ 
+-    const inputOnChange = (e, i) => {
+-        const {name, value} = e.target;
+-        answer[i].score = parseInt(value);
+-        setAnswer([...answer])
+-    };
++  const inputOnChange = (e, i) => {
++    const { name, value } = e.target;
++    answer[i].score = parseInt(value);
++    setAnswer([...answer]);
++  };
+ 
+-    const onAdd = () => {
+-        answer.push({value: "", score: 0, optionId: ""});
+-        dummyAnswer.push({value: "", score: 0, optionId: ""});
+-        setAnswer([...answer])
+-        setDummyAnswer([...dummyAnswer])
+-    };
++  const onAdd = () => {
++    answer.push({ value: '', score: 0, optionId: '' });
++    dummyAnswer.push({ value: '', score: 0, optionId: '' });
++    setAnswer([...answer]);
++    setDummyAnswer([...dummyAnswer]);
++  };
+ 
+-    const onUpdateAns = async () => {
+-        if (!(question.questionText === quizzes.question)) {
+-            const questionText = quizzes.question ? quizzes.question : question.questionText;
+-            const data = {
+-                questionText: questionText,
+-            };
+-            setLoading(true);
+-            const response = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/edit`, data);
+-            if (response.status === 200) {
+-                setDefaultFlag(true);
+-                setFlag(!flag);
+-                setChanges("")
+-            } else {
+-                setServerErr(response.data.errorMessage);
+-            }
+-            setLoading(false);
+-        } else {
+-            setLoading(false);
+-        }
+-        let result = [];
+-        if (dummyAnswer.length > 0) {
+-            answer.forEach((item, index) => {
+-                dummyAnswer.forEach((x, i) => {
+-                    if (index === i && x.optionText !== item.value) {
+-                        result.push(item)
+-                    }
+-                })
+-            })
+-        } else {
+-            result.push(...answer)
+-        }
+-        setLoading(true);
+-        if (result.length) {
+-            for (const item of result) {
+-                if (item.optionId === "") {
+-                    const data1 = {
+-                        optionText: item.value,
+-                        score: 0
+-                    };
+-                    const response1 = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/add`, data1);
+-                    if (response1 && response1.data && response1.data.option) {
+-                        setDeleteFlag(!deleteFlag);
+-                        setLocalOption([])
+-                    } else {
+-                        setServerErr(response1.data.errorMessage);
+-                    }
+-                    setLoading(false);
+-                } else {
+-                    const data1 = {
+-                        optionText: item.value,
+-                    };
+-                    const response = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/${item.optionId}/edit`, data1);
+-                    if (response && response.status === 200) {
+-                        setLoading(false);
+-                        setDeleteFlag(!deleteFlag);
+-                        setLocalOption([])
+-                    } else {
+-                        setServerErr(response.data.errorMessage);
+-                        setLoading(false);
+-                    }
+-                }
+-            }
+-        } else {
+-            setLoading(false);
+-        }
+-    };
++  const onUpdateAns = async () => {
++    if (!(question.questionText === quizzes.question)) {
++      const questionText = quizzes.question ? quizzes.question : question.questionText;
++      const data = {
++        questionText,
++      };
++      setLoading(true);
++      const response = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/edit`, data);
++      if (response.status === 200) {
++        setDefaultFlag(true);
++        setFlag(!flag);
++        setChanges('');
++      } else {
++        setServerErr(response.data.errorMessage);
++      }
++      setLoading(false);
++    } else {
++      setLoading(false);
++    }
++    const result = [];
++    if (dummyAnswer.length > 0) {
++      answer.forEach((item, index) => {
++        dummyAnswer.forEach((x, i) => {
++          if (index === i && x.optionText !== item.value) {
++            result.push(item);
++          }
++        });
++      });
++    } else {
++      result.push(...answer);
++    }
++    setLoading(true);
++    if (result.length) {
++      for (const item of result) {
++        if (item.optionId === '') {
++          const data1 = {
++            optionText: item.value,
++            score: 0
++          };
++          const response1 = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/add`, data1);
++          if (response1 && response1.data && response1.data.option) {
++            setDeleteFlag(!deleteFlag);
++            setLocalOption([]);
++          } else {
++            setServerErr(response1.data.errorMessage);
++          }
++          setLoading(false);
++        } else {
++          const data1 = {
++            optionText: item.value,
++          };
++          const response = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/${item.optionId}/edit`, data1);
++          if (response && response.status === 200) {
++            setLoading(false);
++            setDeleteFlag(!deleteFlag);
++            setLocalOption([]);
++          } else {
++            setServerErr(response.data.errorMessage);
++            setLoading(false);
++          }
++        }
++      }
++    } else {
++      setLoading(false);
++    }
++  };
+ 
+-    const decrement = (index) => {
+-        if (answer[index].score === 0) {
+-            answer[index].score = 0
+-            setAnswer([...answer])
+-        } else {
+-            answer[index].score = answer[index].score - 1
+-            setAnswer([...answer])
+-        }
+-    };
++  const decrement = (index) => {
++    if (answer[index].score === 0) {
++      answer[index].score = 0;
++      setAnswer([...answer]);
++    } else {
++      answer[index].score = answer[index].score - 1;
++      setAnswer([...answer]);
++    }
++  };
+ 
+-    const increment = (index) => {
+-        answer[index].score = answer[index].score + 1
+-        setAnswer([...answer])
+-    };
++  const increment = (index) => {
++    answer[index].score = answer[index].score + 1;
++    setAnswer([...answer]);
++  };
+ 
+-    const onDeleteOption = async (option) => {
+-        try {
+-            if (option.id) {
+-                setLoading(true);
+-                const response = await axios.delete(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/${option.id}/delete`);
+-                if (response.data.deleted) {
+-                    setLoading(false);
+-                    const d = answer.filter(item => item.optionId === "");
+-                    setLocalOption(d);
+-                    setDeleteFlag(!deleteFlag);
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                    setLoading(false);
+-                }
+-            } else {
+-                answer.splice(-1)
+-                setAnswer([...answer])
+-            }
+-        } catch (e) {
+-            setLoading(false);
+-            setServerErr('Some server Error');
+-        }
+-    };
++  const onDeleteOption = async (option) => {
++    try {
++      if (option.id) {
++        setLoading(true);
++        const response = await axios.delete(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/${option.id}/delete`);
++        if (response.data.deleted) {
++          setLoading(false);
++          const d = answer.filter((item) => item.optionId === '');
++          setLocalOption(d);
++          setDeleteFlag(!deleteFlag);
++        } else {
++          setServerErr(response.data.errorMessage);
++          setLoading(false);
++        }
++      } else {
++        answer.splice(-1);
++        setAnswer([...answer]);
++      }
++    } catch (e) {
++      setLoading(false);
++      setServerErr('Some server Error');
++    }
++  };
+ 
+-    const onSave = async () => {
+-        try {
+-            const score = {score: 0};
+-            answer.forEach(item => {
+-                score.score += item.score
+-            });
+-            const questionText = quizzes.question ? quizzes.question : question.questionText;
+-            const data = {
+-                questionText: questionText,
+-                isSingleAnswer: multiAns,
+-                position: 1
+-            };
+-            setLoading(true);
+-            const response = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/edit`, data);
+-            if (response.status === 200) {
+-                setOpen(false);
+-                setDefaultFlag(true);
+-                setFlag(!flag);
+-                setChanges("")
+-            } else {
+-                setServerErr(response.data.errorMessage);
+-            }
++  const onSave = async () => {
++    try {
++      const score = { score: 0 };
++      answer.forEach((item) => {
++        score.score += item.score;
++      });
++      const questionText = quizzes.question ? quizzes.question : question.questionText;
++      const data = {
++        questionText,
++        isSingleAnswer: multiAns,
++        position: 1
++      };
++      setLoading(true);
++      const response = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/edit`, data);
++      if (response.status === 200) {
++        setOpen(false);
++        setDefaultFlag(true);
++        setFlag(!flag);
++        setChanges('');
++      } else {
++        setServerErr(response.data.errorMessage);
++      }
+ 
+-            let modifyAnswer = answer;
++      const modifyAnswer = answer;
+ 
+-            for (const [index, item] of answer.entries()) {
+-                if (item.optionId === "") {
+-                    const data1 = {
+-                        optionText: item.value,
+-                        score: item.score,
+-                        position: 1
+-                    };
+-                    const response1 = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/add`, data1);
+-                    if (response1 && response1.data && response1.data.option) {
+-                        const option = response1.data.option;
+-                        modifyAnswer[index] = {
+-                            ...item,
+-                            value: option.optionText,
+-                            score: option.score,
+-                            optionId: option.id
+-                        };
+-                        setDeleteFlag(!deleteFlag);
+-                    } else {
+-                        setServerErr(response1.data.errorMessage);
+-                    }
+-                    setLoading(false);
+-                } else {
+-                    let result = [];
+-                    dummyAnswer.forEach((x, i) => {
+-                        if (index === i && (x.optionText !== item.value || x.score !== item.score)) {
+-                            result.push(item)
+-                        }
+-                    });
+-                    if (result.length > 0) {
+-                        for (const i of result) {
+-                            const data1 = {
+-                                optionText: i.value,
+-                                score: i.score,
+-                                position: 1
+-                            };
+-                            const response = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/${i.optionId}/edit`, data1);
+-                            if (response && response.status === 200) {
+-                                setLoading(false);
+-                                setDeleteFlag(!deleteFlag);
+-                            } else {
+-                                setServerErr(response.data.errorMessage);
+-                            }
+-                        }
+-                    }
+-                }
+-            }
+-            setAnswer(JSON.parse(JSON.stringify(modifyAnswer)));
+-            setLoading(false);
+-        } catch (e) {
+-            setLoading(false);
+-            setServerErr('Some server Error');
+-        }
+-    };
++      for (const [index, item] of answer.entries()) {
++        if (item.optionId === '') {
++          const data1 = {
++            optionText: item.value,
++            score: item.score,
++            position: 1
++          };
++          const response1 = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/add`, data1);
++          if (response1 && response1.data && response1.data.option) {
++            const { option } = response1.data;
++            modifyAnswer[index] = {
++              ...item,
++              value: option.optionText,
++              score: option.score,
++              optionId: option.id
++            };
++            setDeleteFlag(!deleteFlag);
++          } else {
++            setServerErr(response1.data.errorMessage);
++          }
++          setLoading(false);
++        } else {
++          const result = [];
++          dummyAnswer.forEach((x, i) => {
++            if (index === i && (x.optionText !== item.value || x.score !== item.score)) {
++              result.push(item);
++            }
++          });
++          if (result.length > 0) {
++            for (const i of result) {
++              const data1 = {
++                optionText: i.value,
++                score: i.score,
++                position: 1
++              };
++              const response = await axios.post(`/api/sundae/quizzes/${id.QuizId}/questions/${id.QuestionId}/options/${i.optionId}/edit`, data1);
++              if (response && response.status === 200) {
++                setLoading(false);
++                setDeleteFlag(!deleteFlag);
++              } else {
++                setServerErr(response.data.errorMessage);
++              }
++            }
++          }
++        }
++      }
++      setAnswer(JSON.parse(JSON.stringify(modifyAnswer)));
++      setLoading(false);
++    } catch (e) {
++      setLoading(false);
++      setServerErr('Some server Error');
++    }
++  };
+ 
+-    return (
+-        <div className={styles.main_container}>
+-            {
+-                isLoading ? <CardLoader/> :
++  return (
++    <div className={styles.main_container}>
++      {
++                isLoading ? <CardLoader />
++                  : (
+                     <div>
+-                        <div>
+-                            <Card className={styles.add_quiz}>
+-                                <div className="container-fluid" style={{width: "90%"}}>
+-                                    <div style={{height: "100%"}}>
+-                            <textarea
++                      <div>
++                        <Card className={styles.add_quiz}>
++                          <div className="container-fluid" style={{ width: '90%' }}>
++                            <div style={{ height: '100%' }}>
++                              <textarea
+                                 onInputCapture={onQuestionChange}
+-                                style={{height: height}}
+-                                placeholder="Question " className={styles.input}
++                                style={{ height }}
++                                placeholder="Question "
++                                className={styles.input}
+                                 name="question"
+                                 id="question"
+                                 value={(quizzes && quizzes.question)}
+-                                onChange={onQuestionChange}/>
+-                                        <span
+-                                            style={{color: "green"}}>{!isNaN(question && question.questionText && question.questionText.split(" ")[1]) ? "" : changes}</span>
+-                                        <div className={styles.card_container}>
+-                                            <Card className={styles.card_body}>
+-                                                <CardBody>
+-                                                    {
++                                onChange={onQuestionChange}
++                              />
++                              <span
++                                style={{ color: 'green' }}
++                              >
++                                {!isNaN(question && question.questionText && question.questionText.split(' ')[1]) ? '' : changes}
++                              </span>
++                              <div className={styles.card_container}>
++                                <Card className={styles.card_body}>
++                                  <CardBody>
++                                    {
+                                                         answer && answer.map((item, i) => (
+-                                                                <div key={`${answer}_${i}`} className={styles.input_icon}>
+-                                                                    <input placeholder={`Answer ${i + 1}`}
+-                                                                           className={styles.card_input}
+-                                                                           name={i}
+-                                                                           value={item.value}
+-                                                                           onChange={(e) => onAnswerChange(e, i)}/>
+-                                                                    <div key={`${answer}_${i}`}>
+-                                                                        {
+-                                                                            answer.length > 2 ?
+-                                                                                <img onClick={() => onDeleteOption(item)}
+-                                                                                     className={styles.card_icon}
+-                                                                                     height={20}
+-                                                                                     width={20}
+-                                                                                     src="/Assets/trash.png" alt=" "/> :
+-                                                                                ""
++                                                          <div key={`${answer}_${i}`} className={styles.input_icon}>
++                                                            <input
++                                                              placeholder={`Answer ${i + 1}`}
++                                                              className={styles.card_input}
++                                                              name={i}
++                                                              value={item.value}
++                                                              onChange={(e) => onAnswerChange(e, i)}
++                                                            />
++                                                            <div key={`${answer}_${i}`}>
++                                                              {
++                                                                            answer.length > 2
++                                                                              ? (
++                                                                                <img
++                                                                                  onClick={() => onDeleteOption(item)}
++                                                                                  className={styles.card_icon}
++                                                                                  height={20}
++                                                                                  width={20}
++                                                                                  src="/Assets/trash.png"
++                                                                                  alt=" "
++                                                                                />
++                                                                              )
++                                                                              : ''
+                                                                         }
+-                                                                    </div>
+-                                                                </div>
+-                                                            )
+-                                                        )
++                                                            </div>
++                                                          </div>
++                                                        ))
+                                                     }
+-                                                    <br/>
+-                                                    <div className={styles.add_button_container}>
+-                                                        <button className={styles.add_button}
+-                                                                style={{marginRight: "10px"}}
+-                                                                onClick={onAdd}>Add Option
+-                                                        </button>
+-                                                        <button className={styles.add_button}
+-                                                                style={{marginLeft: "10px"}}
+-                                                                onClick={onUpdateAns}>{question && question.options && question.options.length ? "Update Option" : "Save option"}</button>
+-                                                    </div>
+-                                                </CardBody>
+-                                            </Card>
+-                                        </div>
+-                                    </div>
+-                                </div>
+-                            </Card>
+-                        </div>
+-                        <button className={styles.score_button} onClick={() => setOpen(true)}>Set Answer Score</button>
+-                        <Modal
+-                            contentClassName="score_model"
+-                            style={{position: "absolute", right: 0}}
+-                            isOpen={isOpen}
+-                            toggle={() => setOpen(false)}
+-                        >
+-                            <ModalHeader>
+-                                Set Answer Score
+-                            </ModalHeader>
+-                            <ModalBody>
+-                                <div style={{marginLeft: "20px"}}>
+-                                    <Input
++                                    <br />
++                                    <div className={styles.add_button_container}>
++                                      <button
++                                        className={styles.add_button}
++                                        style={{ marginRight: '10px' }}
++                                        onClick={onAdd}
++                                      >
++                                        Add Option
++                                      </button>
++                                      <button
++                                        className={styles.add_button}
++                                        style={{ marginLeft: '10px' }}
++                                        onClick={onUpdateAns}
++                                      >
++                                        {question && question.options && question.options.length ? 'Update Option' : 'Save option'}
++                                      </button>
++                                    </div>
++                                  </CardBody>
++                                </Card>
++                              </div>
++                            </div>
++                          </div>
++                        </Card>
++                      </div>
++                      <button className={styles.score_button} onClick={() => setOpen(true)}>Set Answer Score</button>
++                      <Modal
++                        contentClassName="score_model"
++                        style={{ position: 'absolute', right: 0 }}
++                        isOpen={isOpen}
++                        toggle={() => setOpen(false)}
++                      >
++                        <ModalHeader>
++                          Set Answer Score
++                        </ModalHeader>
++                        <ModalBody>
++                          <div style={{ marginLeft: '20px' }}>
++                            <Input
+                                         // checked={question ? question.isSingleAnswer : multiAns}
+-                                        type="checkbox"
+-                                        onChange={(e) => handelCheckboxChange(e)}
+-                                    />
+-                                    <p>Enable Select Multiple Answers</p>
+-                                </div>
+-                                <Table className={styles.table} striped>
+-                                    <thead>
+-                                    <tr>
+-                                        <th>Answer</th>
+-                                        <th>Score</th>
+-                                    </tr>
+-                                    </thead>
+-                                    <tbody>
+-                                    {
++                              type="checkbox"
++                              onChange={(e) => handelCheckboxChange(e)}
++                            />
++                            <p>Enable Select Multiple Answers</p>
++                          </div>
++                          <Table className={styles.table} striped>
++                            <thead>
++                              <tr>
++                                <th>Answer</th>
++                                <th>Score</th>
++                              </tr>
++                            </thead>
++                            <tbody>
++                              {
+                                         answer && answer.map((item, answerIndex) => (
+-                                            <tr key={`${answer}_${answerIndex}`}>
+-                                                <td className={styles.table_td}>{item.value || `Answer ${answerIndex}`}</td>
+-                                                <td className={styles.table_input}>
+-                                                    <input type="number" value={answer[answerIndex].score}
+-                                                           onChange={(e) => inputOnChange(e, answerIndex)}/>
+-                                                    <img onClick={() => decrement(answerIndex)} height={25}
+-                                                         src="/Assets/outline_remove_circle_black_24dp.png"
+-                                                         alt="addIcon"/>
+-                                                    <img onClick={() => increment(answerIndex)} height={25}
+-                                                         src="/Assets/outline_add_circle_black_24dp.png" alt="addIcon"/>
+-                                                </td>
+-                                            </tr>
++                                          <tr key={`${answer}_${answerIndex}`}>
++                                            <td className={styles.table_td}>{item.value || `Answer ${answerIndex}`}</td>
++                                            <td className={styles.table_input}>
++                                              <input
++                                                type="number"
++                                                value={answer[answerIndex].score}
++                                                onChange={(e) => inputOnChange(e, answerIndex)}
++                                              />
++                                              <img
++                                                onClick={() => decrement(answerIndex)}
++                                                height={25}
++                                                src="/Assets/outline_remove_circle_black_24dp.png"
++                                                alt="addIcon"
++                                              />
++                                              <img
++                                                onClick={() => increment(answerIndex)}
++                                                height={25}
++                                                src="/Assets/outline_add_circle_black_24dp.png"
++                                                alt="addIcon"
++                                              />
++                                            </td>
++                                          </tr>
+                                         ))
+                                     }
+-                                    </tbody>
+-                                </Table>
+-                                <div className="alert alert-info">
+-                                    <div className="icon">
+-                                        <i className="far fa-lightbulb fa-fw" aria-hidden="true"/>
+-                                    </div>
+-                                    <span><strong>Help Tip: </strong>When this section is closed, your result score ranges will be automatically adjusted to ensure that all of your scores are included. If you need to adjust your result score ranges, wait until you have set up all answer scores and then adjust the result score ranges.</span>
+-                                </div>
+-                            </ModalBody>
+-                            <ModalFooter className={styles.footer}>
+-                                <Button className={styles.save_button} color="primary"
+-                                        onClick={onSave}>Save</Button>{' '}
+-                                <Button className={styles.cancel_button} color="secondary"
+-                                        onClick={() => setOpen(false)}>Cancel</Button>
+-                            </ModalFooter>
+-                        </Modal>
++                            </tbody>
++                          </Table>
++                          <div className="alert alert-info">
++                            <div className="icon">
++                              <i className="far fa-lightbulb fa-fw" aria-hidden="true" />
++                            </div>
++                            <span>
++                              <strong>Help Tip: </strong>
++                              When this section is closed, your result score ranges will be automatically adjusted to ensure that all of your scores are included. If you need to adjust your result score ranges, wait until you have set up all answer scores and then adjust the result score ranges.
++                            </span>
++                          </div>
++                        </ModalBody>
++                        <ModalFooter className={styles.footer}>
++                          <Button
++                            className={styles.save_button}
++                            color="primary"
++                            onClick={onSave}
++                          >
++                            Save
++                          </Button>
++                          {' '}
++                          <Button
++                            className={styles.cancel_button}
++                            color="secondary"
++                            onClick={() => setOpen(false)}
++                          >
++                            Cancel
++                          </Button>
++                        </ModalFooter>
++                      </Modal>
+                     </div>
++                  )
+             }
+-        </div>
+-    )
++    </div>
++  );
+ };
+ 
+ export default AddQuizzes;
+Index: Components/QuizNav/QuizNav.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/QuizNav/QuizNav.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ Components/QuizNav/QuizNav.js	(date 1632892882310)
+@@ -1,295 +1,335 @@
+-import React, {useState, useEffect} from 'react';
+-import {useRouter} from "next/router";
++import React, { useState, useEffect } from 'react';
++import { useRouter } from 'next/router';
+ import Link from 'next/link';
+-import {Button, Popover, PopoverHeader, PopoverBody, Spinner} from 'reactstrap';
+-import {useSession} from 'next-auth/client';
++import {
++  Button, Popover, PopoverHeader, PopoverBody, Spinner
++} from 'reactstrap';
++import { useSession } from 'next-auth/client';
++import axios from 'axios';
+ import styles from './quizNav.module.scss';
+-import axios from "axios";
+-import SideNavLoader from "../SideNavLoader";
++import SideNavLoader from '../SideNavLoader';
+ 
+ const QuizNav = (props) => {
+-    const router = useRouter();
+-    const {flag} = props;
+-    const [session, loading] = useSession();
+-    const [isLoading, setLoading] = useState(false);
+-    const [serverErr, setServerErr] = useState(null);
+-    const [question, setQuestion] = useState([]);
+-    const [result, setResult] = useState([]);
+-    const [id, setId] = useState("");
+-    const [seriesId, setSeriesId] = useState("");
+-    const [popoverOpen, setPopoverOpen] = useState(false);
+-    const [popoverResultOpen, setPopoverResultOpen] = useState(false);
+-    const [deleteFlag, setDeleteFlag] = useState(false);
+-    const [questionId, setQuestionId] = useState("");
+-    const [resultId, setResultId] = useState("");
+-    const [deleteQuestionId, setDeleteQuestionId] = useState("");
+-    const [deleteResultId, setDeleteResultId] = useState("");
++  const router = useRouter();
++  const { flag } = props;
++  const [session, loading] = useSession();
++  const [isLoading, setLoading] = useState(false);
++  const [serverErr, setServerErr] = useState(null);
++  const [question, setQuestion] = useState([]);
++  const [result, setResult] = useState([]);
++  const [id, setId] = useState('');
++  const [seriesId, setSeriesId] = useState('');
++  const [popoverOpen, setPopoverOpen] = useState(false);
++  const [popoverResultOpen, setPopoverResultOpen] = useState(false);
++  const [deleteFlag, setDeleteFlag] = useState(false);
++  const [questionId, setQuestionId] = useState('');
++  const [resultId, setResultId] = useState('');
++  const [deleteQuestionId, setDeleteQuestionId] = useState('');
++  const [deleteResultId, setDeleteResultId] = useState('');
+ 
+-    useEffect(() => {
+-        const seriesId = window.location.pathname.split('/')[2];
+-        setSeriesId(seriesId);
++  useEffect(() => {
++    const seriesId = window.location.pathname.split('/')[2];
++    setSeriesId(seriesId);
+ 
+-        const id = window.location.pathname.split('/')[4];
+-        setId(id);
++    const id = window.location.pathname.split('/')[4];
++    setId(id);
+ 
+-        let ResultId = "";
+-        const path = window.location.pathname.split('/');
+-        if (path[5] === "result") {
+-            ResultId = path[6]
+-        }
++    let ResultId = '';
++    const path = window.location.pathname.split('/');
++    if (path[5] === 'result') {
++      ResultId = path[6];
++    }
+ 
+-        const getQuiz = async () => {
+-            try {
+-                setLoading(true);
+-                const response = await axios.get(`/api/sundae/quizzes/${id}`);
+-                if (response.data.quiz) {
+-                    setQuestion(response.data.quiz.questions);
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                }
+-                setLoading(false);
+-            } catch (e) {
+-                setLoading(false);
+-                setServerErr('Some server Error');
+-            }
+-        };
+-        const getResult = async () => {
+-            try {
+-                setLoading(true);
+-                const response = await axios.get(`/api/sundae/quizzes/${id}/quizResult`);
+-                if (response.data.quizResults) {
+-                    setResult(response.data.quizResults)
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                }
+-                setLoading(false);
+-            } catch (e) {
+-                setLoading(false);
+-                setServerErr('Some server Error');
+-            }
+-        };
+-        getQuiz();
+-        getResult()
+-    }, [deleteFlag, flag]);
++    const getQuiz = async () => {
++      try {
++        setLoading(true);
++        const response = await axios.get(`/api/sundae/quizzes/${id}`);
++        if (response.data.quiz) {
++          setQuestion(response.data.quiz.questions);
++        } else {
++          setServerErr(response.data.errorMessage);
++        }
++        setLoading(false);
++      } catch (e) {
++        setLoading(false);
++        setServerErr('Some server Error');
++      }
++    };
++    const getResult = async () => {
++      try {
++        setLoading(true);
++        const response = await axios.get(`/api/sundae/quizzes/${id}/quizResult`);
++        if (response.data.quizResults) {
++          setResult(response.data.quizResults);
++        } else {
++          setServerErr(response.data.errorMessage);
++        }
++        setLoading(false);
++      } catch (e) {
++        setLoading(false);
++        setServerErr('Some server Error');
++      }
++    };
++    getQuiz();
++    getResult();
++  }, [deleteFlag, flag]);
+ 
+-    if (loading) return '';
++  if (loading) return '';
+ 
+-    const addQuestion = async () => {
+-        try {
+-            setLoading(true);
+-            const data = {
+-                questionText: `Question ${question.length + 1}`,
+-                isSingleAnswer: false,
+-                position: 1
+-            };
+-            const response = await axios.post(`/api/sundae/quizzes/${id}/questions/add`, data);
+-            if (response.data.question) {
+-                setQuestion([...question, response.data.question])
+-                router.push(`/series/${seriesId}/quizzes/${id}/question/${response.data.question.id}`)
+-            } else {
+-                setServerErr(response.data.errorMessage);
+-            }
+-            setLoading(false);
+-        } catch (e) {
+-            setLoading(false);
+-            setServerErr('Some server Error');
+-        }
+-    };
++  const addQuestion = async () => {
++    try {
++      setLoading(true);
++      const data = {
++        questionText: `Question ${question.length + 1}`,
++        isSingleAnswer: false,
++        position: 1
++      };
++      const response = await axios.post(`/api/sundae/quizzes/${id}/questions/add`, data);
++      if (response.data.question) {
++        setQuestion([...question, response.data.question]);
++        router.push(`/series/${seriesId}/quizzes/${id}/question/${response.data.question.id}`);
++      } else {
++        setServerErr(response.data.errorMessage);
++      }
++      setLoading(false);
++    } catch (e) {
++      setLoading(false);
++      setServerErr('Some server Error');
++    }
++  };
+ 
+-    const onDelete = async (queId) => {
+-        try {
+-            setLoading(true);
+-            const response = await axios.post(`/api/sundae/quizzes/${id}/questions/${queId}/delete`);
+-            if (response.data.deleted) {
+-                setPopoverOpen(!popoverOpen)
+-                setDeleteFlag(!deleteFlag);
+-                setLoading(false);
+-                router.push(`/series/${seriesId}/quizzes/${id}/question`);
+-            } else {
+-                setServerErr(response.data.errorMessage);
+-                setLoading(false);
+-            }
+-        } catch {
+-            setLoading(false);
+-            setServerErr('Some server Error');
+-        }
+-    };
++  const onDelete = async (queId) => {
++    try {
++      setLoading(true);
++      const response = await axios.post(`/api/sundae/quizzes/${id}/questions/${queId}/delete`);
++      if (response.data.deleted) {
++        setPopoverOpen(!popoverOpen);
++        setDeleteFlag(!deleteFlag);
++        setLoading(false);
++        router.push(`/series/${seriesId}/quizzes/${id}/question`);
++      } else {
++        setServerErr(response.data.errorMessage);
++        setLoading(false);
++      }
++    } catch {
++      setLoading(false);
++      setServerErr('Some server Error');
++    }
++  };
+ 
+-    const onDeleteResult = async (resId) => {
+-        try {
+-            setLoading(true);
+-            const response = await axios.post(`/api/sundae/quizzes/${id}/quizResult/${resId}/delete`);
+-            if (response.data.deleted) {
+-                setPopoverResultOpen(!popoverResultOpen);
+-                setDeleteFlag(!deleteFlag);
+-                setLoading(false);
+-                router.push(`/series/${seriesId}/quizzes/${id}/result`);
+-            } else {
+-                setServerErr(response.data.errorMessage);
+-                setLoading(false);
+-            }
+-        } catch {
+-            setLoading(false);
+-            setServerErr('Some server Error');
+-        }
+-    };
++  const onDeleteResult = async (resId) => {
++    try {
++      setLoading(true);
++      const response = await axios.post(`/api/sundae/quizzes/${id}/quizResult/${resId}/delete`);
++      if (response.data.deleted) {
++        setPopoverResultOpen(!popoverResultOpen);
++        setDeleteFlag(!deleteFlag);
++        setLoading(false);
++        router.push(`/series/${seriesId}/quizzes/${id}/result`);
++      } else {
++        setServerErr(response.data.errorMessage);
++        setLoading(false);
++      }
++    } catch {
++      setLoading(false);
++      setServerErr('Some server Error');
++    }
++  };
+ 
+-    const onAddResult = async () => {
+-        try {
+-                setLoading(true);
+-                const data = {
+-                    result: `Result ${result.length + 1}`,
+-                    scoreMin: 0,
+-                    scoreMax: 0
+-                };
+-                const response = await axios.post(`/api/sundae/quizzes/${id}/quizResult/add`, data);
+-                if (response.data.addQuizResult) {
+-                    setResult([...result, response.data.addQuizResult]);
+-                    router.push(`/series/${seriesId}/quizzes/${id}/result/${response.data.addQuizResult.id}`);
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                }
+-                setLoading(false);
+-        } catch (e) {
+-            setLoading(false);
+-            setServerErr('Some server Error');
+-        }
+-    };
++  const onAddResult = async () => {
++    try {
++      setLoading(true);
++      const data = {
++        result: `Result ${result.length + 1}`,
++        scoreMin: 0,
++        scoreMax: 0
++      };
++      const response = await axios.post(`/api/sundae/quizzes/${id}/quizResult/add`, data);
++      if (response.data.addQuizResult) {
++        setResult([...result, response.data.addQuizResult]);
++        router.push(`/series/${seriesId}/quizzes/${id}/result/${response.data.addQuizResult.id}`);
++      } else {
++        setServerErr(response.data.errorMessage);
++      }
++      setLoading(false);
++    } catch (e) {
++      setLoading(false);
++      setServerErr('Some server Error');
++    }
++  };
+ 
+-    const toggle = (id) => {
+-        setQuestionId(id)
+-        setPopoverOpen(!popoverOpen)
+-    };
++  const toggle = (id) => {
++    setQuestionId(id);
++    setPopoverOpen(!popoverOpen);
++  };
+ 
+-    const deleteQuestions = (questionId) => {
+-        setPopoverOpen(true)
+-        setDeleteQuestionId(questionId)
+-    }
++  const deleteQuestions = (questionId) => {
++    setPopoverOpen(true);
++    setDeleteQuestionId(questionId);
++  };
+ 
+-    const deleteResult = (resultId) => {
+-        setPopoverResultOpen(true);
+-        setDeleteResultId(resultId)
+-    };
++  const deleteResult = (resultId) => {
++    setPopoverResultOpen(true);
++    setDeleteResultId(resultId);
++  };
+ 
+-    const toggle2 = (id) => {
+-        setResultId(id)
+-        setPopoverResultOpen(!popoverResultOpen)
+-    };
++  const toggle2 = (id) => {
++    setResultId(id);
++    setPopoverResultOpen(!popoverResultOpen);
++  };
+ 
+-    let links = [
+-        <Link href={`/series/${seriesId}/quizzes`} key="quizzes">
+-            <li className="list-group-item">Return</li>
+-        </Link>,
+-    ];
++  const links = [
++    <Link href={`/series/${seriesId}/quizzes`} key="quizzes">
++      <li className="list-group-item">Return</li>
++    </Link>,
++  ];
+ 
+-    links.push(
+-        <Link href={`/series/${seriesId}/quizzes/${id}/edit`} key="edit">
+-            <li className="list-group-item">Edit Quiz</li>
+-        </Link>
+-    );
++  links.push(
++    <Link href={`/series/${seriesId}/quizzes/${id}/edit`} key="edit">
++      <li className="list-group-item">Edit Quiz</li>
++    </Link>
++  );
+ 
+-    links.push(
+-        <Link href={`/series/${seriesId}/quizzes/${id}/question`} key="question">
+-            <li className="list-group-item">Questions</li>
+-        </Link>
+-    );
++  links.push(
++    <Link href={`/series/${seriesId}/quizzes/${id}/question`} key="question">
++      <li className="list-group-item">Questions</li>
++    </Link>
++  );
+ 
+-    question && question.length > 0 && question.map((item, index) => {
+-        links.push(
+-            <div key={`${question}_${index}`} style={{position: "relative"}}>
+-                <Link href={`/series/${seriesId}/quizzes/${id}/question/${item.id}`} key="question">
+-                    <li style={{background: "#d9e2e3", display: "flex", justifyContent:"space-between"}} className="list-group-item">
+-                        <div style={{display: "inherit", width: "80%"}}>
+-                            <img height={25} src="/Assets/outline_chat_black_24dp.png" alt="addIcon"/>
+-                            <div className={styles.question_text}>
+-                                {item.questionText}
+-                            </div>
+-                        </div>
+-                        <div style={{display: "inherit"}}>
+-                            <img id={item.id} onClick={() => deleteQuestions(item.id)}
+-                                 className={styles.question_img}
+-                                 height={25}
+-                                 src="/Assets/trash.svg"
+-                                 alt="Delete"/>
+-                        </div>
+-                    </li>
+-                </Link>
+-            </div>
+-        )
+-    });
++  question && question.length > 0 && question.map((item, index) => {
++    links.push(
++      <div key={`${question}_${index}`} style={{ position: 'relative' }}>
++        <Link href={`/series/${seriesId}/quizzes/${id}/question/${item.id}`} key="question">
++          <li style={{ background: '#d9e2e3', display: 'flex', justifyContent:'space-between' }} className="list-group-item">
++            <div style={{ display: 'inherit', width: '80%' }}>
++              <img height={25} src="/Assets/outline_chat_black_24dp.png" alt="addIcon" />
++              <div className={styles.question_text}>
++                {item.questionText}
++              </div>
++            </div>
++            <div style={{ display: 'inherit' }}>
++              <img
++                id={item.id}
++                onClick={() => deleteQuestions(item.id)}
++                className={styles.question_img}
++                height={25}
++                src="/Assets/trash.svg"
++                alt="Delete"
++              />
++            </div>
++          </li>
++        </Link>
++      </div>
++    );
++  });
+ 
+-    links.push(
+-        <li onClick={addQuestion} className="list-group-item"><img height={25} src="/Assets/add_plus.png"
+-                                                                   alt="addIcon"/> Add Question</li>
+-    );
++  links.push(
++    <li onClick={addQuestion} className="list-group-item">
++      <img
++        height={25}
++        src="/Assets/add_plus.png"
++        alt="addIcon"
++      />
++      {' '}
++      Add Question
++    </li>
++  );
+ 
+-    links.push(
+-        <li onClick={onAddResult} className="list-group-item"><img height={25} src="/Assets/add_plus.png"
+-                                                                   alt="addIcon"/> Results</li>
+-    );
++  links.push(
++    <li onClick={onAddResult} className="list-group-item">
++      <img
++        height={25}
++        src="/Assets/add_plus.png"
++        alt="addIcon"
++      />
++      {' '}
++      Results
++    </li>
++  );
+ 
+-    result && result.length > 0 && result.map((item, index) => {
+-        links.push(
+-            <div key={`${result}_${index}`} style={{position: "relative"}}>
+-                <Link href={`/series/${seriesId}/quizzes/${id}/result/${item.id}`} key="result">
+-                    <li style={{background: "#d9e2e3", display: "flex", justifyContent:"space-between"}} className="list-group-item">
+-                        <div style={{display: "inherit", width: "60%"}}>
+-                            <img height={25} src="/Assets/outline_flag_black_24dp.png" alt="addIcon"/>
+-                            <div className={styles.result_question}>
+-                                {item.result}
+-                            </div>
+-                        </div>
+-                        <div style={{display: "inherit"}}>
+-                            <div className={styles.result_score}>{`${item.scoreMin} to ${item.scoreMax}`}</div>
+-                            <img id={item.id} onClick={() => deleteResult(item.id)}
+-                                 className={styles.result_img}
+-                                 height={25}
+-                                 src="/Assets/trash.svg"
+-                                 alt="Delete"/>
+-                        </div>
+-                    </li>
+-                </Link>
+-            </div>
+-        )
+-    });
++  result && result.length > 0 && result.map((item, index) => {
++    links.push(
++      <div key={`${result}_${index}`} style={{ position: 'relative' }}>
++        <Link href={`/series/${seriesId}/quizzes/${id}/result/${item.id}`} key="result">
++          <li style={{ background: '#d9e2e3', display: 'flex', justifyContent:'space-between' }} className="list-group-item">
++            <div style={{ display: 'inherit', width: '60%' }}>
++              <img height={25} src="/Assets/outline_flag_black_24dp.png" alt="addIcon" />
++              <div className={styles.result_question}>
++                {item.result}
++              </div>
++            </div>
++            <div style={{ display: 'inherit' }}>
++              <div className={styles.result_score}>{`${item.scoreMin} to ${item.scoreMax}`}</div>
++              <img
++                id={item.id}
++                onClick={() => deleteResult(item.id)}
++                className={styles.result_img}
++                height={25}
++                src="/Assets/trash.svg"
++                alt="Delete"
++              />
++            </div>
++          </li>
++        </Link>
++      </div>
++    );
++  });
+ 
+-    return (
+-        <div className={styles.sidenav_container}>
+-                <ul className="list-group list-group-flush">
+-                    {
+-                        isLoading ? <SideNavLoader/> : links
++  return (
++    <div className={styles.sidenav_container}>
++      <ul className="list-group list-group-flush">
++        {
++                        isLoading ? <SideNavLoader /> : links
+                     }
+-                </ul>
+-            {
+-                isLoading ? <SideNavLoader/> :
+-                popoverOpen && (
+-                    <Popover placement="bottom-end" isOpen={popoverOpen} toggle={() => toggle(deleteQuestionId)}
+-                             target={deleteQuestionId}>
+-                        <PopoverHeader>Are You Sure Delete This Question?</PopoverHeader>
+-                        <PopoverBody>
+-                            <Button onClick={() => onDelete(deleteQuestionId)} type="button">Delete</Button>
+-                            <Button onClick={() => setPopoverOpen(!popoverOpen)} style={{marginLeft: "2px"}}
+-                                    type="button">Cancel</Button>
+-                        </PopoverBody>
+-                    </Popover>
+-                )
++      </ul>
++      {
++                isLoading ? <SideNavLoader />
++                  : popoverOpen && (
++                  <Popover
++                    placement="bottom-end"
++                    isOpen={popoverOpen}
++                    toggle={() => toggle(deleteQuestionId)}
++                    target={deleteQuestionId}
++                  >
++                    <PopoverHeader>Are You Sure Delete This Question?</PopoverHeader>
++                    <PopoverBody>
++                      <Button onClick={() => onDelete(deleteQuestionId)} type="button">Delete</Button>
++                      <Button
++                        onClick={() => setPopoverOpen(!popoverOpen)}
++                        style={{ marginLeft: '2px' }}
++                        type="button"
++                      >
++                        Cancel
++                      </Button>
++                    </PopoverBody>
++                  </Popover>
++                  )
+             }
+-            {
+-                isLoading ? <SideNavLoader/> :
+-                popoverResultOpen && (
+-                    <Popover placement="bottom-end" isOpen={popoverResultOpen} toggle={() => toggle2(deleteResultId)}
+-                             target={deleteResultId}>
+-                        <PopoverHeader>Are You Sure Delete This Result?</PopoverHeader>
+-                        <PopoverBody>
+-                            <Button onClick={() => onDeleteResult(deleteResultId)} type="button">Delete</Button>
+-                            <Button onClick={() => setPopoverResultOpen(!popoverResultOpen)} style={{marginLeft: "2px"}}
+-                                    type="button">Cancel</Button>
+-                        </PopoverBody>
+-                    </Popover>
+-                )
++      {
++                isLoading ? <SideNavLoader />
++                  : popoverResultOpen && (
++                  <Popover
++                    placement="bottom-end"
++                    isOpen={popoverResultOpen}
++                    toggle={() => toggle2(deleteResultId)}
++                    target={deleteResultId}
++                  >
++                    <PopoverHeader>Are You Sure Delete This Result?</PopoverHeader>
++                    <PopoverBody>
++                      <Button onClick={() => onDeleteResult(deleteResultId)} type="button">Delete</Button>
++                      <Button
++                        onClick={() => setPopoverResultOpen(!popoverResultOpen)}
++                        style={{ marginLeft: '2px' }}
++                        type="button"
++                      >
++                        Cancel
++                      </Button>
++                    </PopoverBody>
++                  </Popover>
++                  )
+             }
+-        </div>
+-    );
++    </div>
++  );
+ };
+ 
+ export default QuizNav;
+Index: Components/QuizzCard/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/QuizzCard/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ Components/QuizzCard/index.js	(date 1632892534971)
+@@ -1,75 +1,77 @@
+-import React, {useState,useEffect} from 'react';
+-import {Button, Col, Modal, ModalBody, ModalFooter, ModalHeader, Spinner} from "reactstrap";
+-import styles from "./quizzCard.module.scss"
+-import {useRouter} from "next/router";
+-import axios from "axios";
++import React, { useState, useEffect } from 'react';
++import {
++  Button, Col, Modal, ModalBody, ModalFooter, ModalHeader, Spinner
++} from 'reactstrap';
++import { useRouter } from 'next/router';
++import axios from 'axios';
++import styles from './quizzCard.module.scss';
+ 
+ const QuizzCard = (props) => {
+-    const router = useRouter();
++  const router = useRouter();
+ 
+-    const [deleteModal, setDeleteModal] = useState(false);
+-    const [isDeleting, setIsDeleting] = useState(false);
+-    const [hiddenStyle, setHiddenStyle] = useState(null);
+-    const [seriesId, setSeriesId] = useState("");
++  const [deleteModal, setDeleteModal] = useState(false);
++  const [isDeleting, setIsDeleting] = useState(false);
++  const [hiddenStyle, setHiddenStyle] = useState(null);
++  const [seriesId, setSeriesId] = useState('');
+ 
+-    useEffect(()=>{
+-        const seriesId = window.location.pathname.split('/')[2];
+-        setSeriesId(seriesId)
+-    },[]);
++  useEffect(() => {
++    const seriesId = window.location.pathname.split('/')[2];
++    setSeriesId(seriesId);
++  }, []);
+ 
+-    const onQuizzCard = (item) => {
+-        router.push(`/series/${seriesId}/quizzes/${item.id}/question`);
+-    };
++  const onQuizzCard = (item) => {
++    router.push(`/series/${seriesId}/quizzes/${item.id}/question`);
++  };
+ 
+-    const deleteQuizzes = async () => {
+-        setIsDeleting(true);
+-        const deleteResp = await axios.delete(`/api/sundae/quizzes/${props.quizzes.id}/delete`);
+-        setIsDeleting(false);
+-        toggleDeleteModal();
+-        if (deleteResp.data.errorMessage) {
+-            console.error(deleteResp.data.errorMessage);
+-        } else {
+-            setHiddenStyle({ display: 'none' });
+-        }
+-    };
++  const deleteQuizzes = async () => {
++    setIsDeleting(true);
++    const deleteResp = await axios.delete(`/api/sundae/quizzes/${props.quizzes.id}/delete`);
++    setIsDeleting(false);
++    toggleDeleteModal();
++    if (deleteResp.data.errorMessage) {
++      console.error(deleteResp.data.errorMessage);
++    } else {
++      setHiddenStyle({ display: 'none' });
++    }
++  };
+ 
+-    const toggleDeleteModal = () => setDeleteModal(!deleteModal);
++  const toggleDeleteModal = () => setDeleteModal(!deleteModal);
+ 
+-    return(
+-        <Col sm={12} md={3}>
+-        <div className={styles.add_quizzes_btn_container} style={hiddenStyle}>
+-            <Modal centered isOpen={deleteModal} toggle={toggleDeleteModal}>
+-                <ModalHeader toggle={toggleDeleteModal}>Delete Series</ModalHeader>
+-                <ModalBody>
+-                    Are you sure? This cannot be undone.
+-                    <br />
+-                    { isDeleting
+-                        ? <Spinner style={{ width: '3rem', height: '3rem' }} /> : ''}
+-                </ModalBody>
+-                <ModalFooter>
+-                    <Button disabled={isDeleting} color="danger" onClick={deleteQuizzes}>Delete</Button>
+-                    {' '}
+-                    <Button disabled={isDeleting} color="secondary" onClick={toggleDeleteModal}>Cancel</Button>
+-                </ModalFooter>
+-            </Modal>
+-            <div
+-                onClick={()=>onQuizzCard(props.quizzes)}
+-            >
+-                <div className={styles.img_container}>
+-                <img src={props.quizzes.imageUrl} alt="addIcon"/>
+-                </div>
+-                <div className={styles.title_container}>
+-                    <p>{props.quizzes.title}</p>
+-                </div>
+-            </div>
+-            <p
+-                onClick={toggleDeleteModal}
+-            >
+-                <img src="/Assets/trash.svg" alt="Delete" />
+-            </p>
+-        </div>
+-        </Col>
+-    )
++  return (
++    <Col sm={12} md={3}>
++      <div className={styles.add_quizzes_btn_container} style={hiddenStyle}>
++        <Modal centered isOpen={deleteModal} toggle={toggleDeleteModal}>
++          <ModalHeader toggle={toggleDeleteModal}>Delete Series</ModalHeader>
++          <ModalBody>
++            Are you sure? This cannot be undone.
++            <br />
++            { isDeleting
++              ? <Spinner style={{ width: '3rem', height: '3rem' }} /> : ''}
++          </ModalBody>
++          <ModalFooter>
++            <Button disabled={isDeleting} color="danger" onClick={deleteQuizzes}>Delete</Button>
++            {' '}
++            <Button disabled={isDeleting} color="secondary" onClick={toggleDeleteModal}>Cancel</Button>
++          </ModalFooter>
++        </Modal>
++        <div
++          onClick={() => onQuizzCard(props.quizzes)}
++        >
++          <div className={styles.img_container}>
++            <img src={props.quizzes.imageUrl} alt="addIcon" />
++          </div>
++          <div className={styles.title_container}>
++            <p>{props.quizzes.title}</p>
++          </div>
++        </div>
++        <p
++          onClick={toggleDeleteModal}
++        >
++          <img src="/Assets/trash.svg" alt="Delete" />
++        </p>
++      </div>
++    </Col>
++  );
+ };
+ 
+ export default QuizzCard;
+Index: pages/series/[seriesId]/quizzes/[quizzesId]/question/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pages/series/[seriesId]/quizzes/[quizzesId]/question/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ pages/series/[seriesId]/quizzes/[quizzesId]/question/index.js	(date 1632892601343)
+@@ -1,73 +1,72 @@
+-import React, {useState, useEffect} from 'react';
+-import Layout from "../../../../../../Components/Layout/Layout";
+-import Head from "next/dist/next-server/lib/head";
+-import AddQuizzes from "../../../../../../Components/AddQuizzes/AddQuizzes";
+-import axios from "axios";
++import React, { useState, useEffect } from 'react';
++import Head from 'next/dist/next-server/lib/head';
++import axios from 'axios';
++import Layout from '../../../../../../Components/Layout/Layout';
++import AddQuizzes from '../../../../../../Components/AddQuizzes/AddQuizzes';
+ 
+-const Question = (props) => {
+-    const [isLoading, setLoading] = useState(false);
+-    const [serverErr, setServerErr] = useState(null);
+-    const [question, setQuestion] = useState([]);
+-    const [id, setId] = useState("");
+-    const [flag, setFlag] = useState(false);
+-    const [addFlag, setAddFlag] = useState(false);
++const Question = () => {
++  const [isLoading, setLoading] = useState(false);
++  const [serverErr, setServerErr] = useState(null);
++  const [question, setQuestion] = useState([]);
++  const [id, setId] = useState('');
++  const [flag, setFlag] = useState(false);
+ 
+-    useEffect(() => {
+-        const id = window.location.pathname.split('/')[4]
+-        setId(id);
+-        const getQuiz = async () => {
+-            try {
+-                setLoading(true);
+-                const response = await axios.get(`/api/sundae/quizzes/${id}`);
+-                if (response.data.quiz) {
+-                    const quiz = response.data.quiz.questions
+-                    if(quiz.length > 0){
+-                        setQuestion(response.data.quiz.questions);
+-                    }else {
+-                        createQuestion()
+-                    }
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                }
+-                setLoading(false);
+-            } catch (e) {
+-                setLoading(false);
+-                setServerErr('Some server Error');
+-            }
+-        };
+-        const createQuestion = async () => {
+-            try {
+-                setLoading(true);
+-                const data = {
+-                    questionText: `Question ${question.length + 1}`,
+-                    isSingleAnswer: false,
+-                    position: 1
+-                };
+-                const response = await axios.post(`/api/sundae/quizzes/${id}/questions/add`, data);
+-                if (response.data.question) {
+-                    setFlag(!flag);
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                }
+-                setLoading(false);
+-            } catch (e) {
+-                setLoading(false);
+-                setServerErr('Some server Error');
+-            }
+-        };
+-        getQuiz();
+-    }, [flag]);
++  useEffect(() => {
++    const id = window.location.pathname.split('/')[4];
++    setId(id);
++    const getQuiz = async () => {
++      try {
++        setLoading(true);
++        const response = await axios.get(`/api/sundae/quizzes/${id}`);
++        if (response.data.quiz) {
++          const quiz = response.data.quiz.questions;
++          if (quiz.length > 0) {
++            setQuestion(response.data.quiz.questions);
++          } else {
++            createQuestion();
++          }
++        } else {
++          setServerErr(response.data.errorMessage);
++        }
++        setLoading(false);
++      } catch (e) {
++        setLoading(false);
++        setServerErr('Some server Error');
++      }
++    };
++    const createQuestion = async () => {
++      try {
++        setLoading(true);
++        const data = {
++          questionText: `Question ${question.length + 1}`,
++          isSingleAnswer: false,
++          position: 1
++        };
++        const response = await axios.post(`/api/sundae/quizzes/${id}/questions/add`, data);
++        if (response.data.question) {
++          setFlag(!flag);
++        } else {
++          setServerErr(response.data.errorMessage);
++        }
++        setLoading(false);
++      } catch (e) {
++        setLoading(false);
++        setServerErr('Some server Error');
++      }
++    };
++    getQuiz();
++  }, [flag]);
+ 
+-    return (
+-        <Layout quizNav question={question} id={id} flag={flag}>
+-            <Head>
+-                <title>Sundae - Question</title>
+-            </Head>
+-            <div>
+-                <AddQuizzes question={question} setFlag={setFlag} flag={flag}/>
+-            </div>
+-        </Layout>
+-    )
++  return (
++    <Layout quizNav question={question} id={id} flag={flag}>
++      <Head>
++        <title>Sundae - Question</title>
++      </Head>
++      <div>
++        <AddQuizzes question={question} setFlag={setFlag} flag={flag} />
++      </div>
++    </Layout>
++  );
+ };
+ 
+ export default Question;
+Index: pages/series/[seriesId]/quizzes/[quizzesId]/result/[resultId]/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pages/series/[seriesId]/quizzes/[quizzesId]/result/[resultId]/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ pages/series/[seriesId]/quizzes/[quizzesId]/result/[resultId]/index.js	(date 1632892611359)
+@@ -1,22 +1,21 @@
+-import React,{useEffect, useState} from 'react';
+-import Head from "next/dist/next-server/lib/head";
+-import Layout from "../../../../../../../Components/Layout/Layout";
+-import ResultCard from "../../../../../../../Components/ResultCard";
++import React, { useState } from 'react';
++import Head from 'next/dist/next-server/lib/head';
++import Layout from '../../../../../../../Components/Layout/Layout';
++import ResultCard from '../../../../../../../Components/ResultCard';
+ 
+ const ResultId = () => {
+-
+-    const [flag, setFlag] = useState(false);
++  const [flag, setFlag] = useState(false);
+ 
+-    return(
+-        <Layout quizNav flag={flag}>
+-            <Head>
+-                <title>Sundae - Result</title>
+-            </Head>
+-            <div>
+-                <ResultCard setFlag={setFlag} flag={flag}/>
+-            </div>
+-        </Layout>
+-    )
++  return (
++    <Layout quizNav flag={flag}>
++      <Head>
++        <title>Sundae - Result</title>
++      </Head>
++      <div>
++        <ResultCard setFlag={setFlag} flag={flag} />
++      </div>
++    </Layout>
++  );
+ };
+ 
+ export default ResultId;
+Index: pages/series/[seriesId]/quizzes/[quizzesId]/question/[questionId]/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pages/series/[seriesId]/quizzes/[quizzesId]/question/[questionId]/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ pages/series/[seriesId]/quizzes/[quizzesId]/question/[questionId]/index.js	(date 1632892578648)
+@@ -1,51 +1,51 @@
+ import { useRouter } from 'next/router';
+-import React, {useEffect, useState} from 'react';
+-import Head from "next/dist/next-server/lib/head";
+-import AddQuizzes from "../../../../../../../Components/AddQuizzes/AddQuizzes";
+-import Layout from "../../../../../../../Components/Layout/Layout";
+-import axios from "axios";
++import React, { useEffect, useState } from 'react';
++import Head from 'next/dist/next-server/lib/head';
++import axios from 'axios';
++import AddQuizzes from '../../../../../../../Components/AddQuizzes/AddQuizzes';
++import Layout from '../../../../../../../Components/Layout/Layout';
+ 
+ const QuestionId = () => {
+-    const [isLoading, setLoading] = useState(false);
+-    const [serverErr, setServerErr] = useState(null);
+-    const [question, setQuestion] = useState([]);
+-    const [oneQuestion, setOneQuestion] = useState({});
+-    const [flag, setFlag] = useState(false);
++  const [isLoading, setLoading] = useState(false);
++  const [serverErr, setServerErr] = useState(null);
++  const [question, setQuestion] = useState([]);
++  const [oneQuestion, setOneQuestion] = useState({});
++  const [flag, setFlag] = useState(false);
+ 
+-    useEffect(()=> {
+-        const id = window.location.pathname.split('/')[4];
+-        const questionId = window.location.pathname.split('/')[6];
+-        const getQuiz = async () => {
+-            try {
+-                setLoading(true);
+-                const response = await axios.post(`/api/sundae/quizzes/${id}`);
+-                if (response.data.quiz) {
+-                    const Question = response.data.quiz.questions;
+-                    setQuestion(Question);
+-                    const result = Question.find(item => item.id === questionId);
+-                    setOneQuestion(result)
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                }
+-                setLoading(false);
+-            } catch (e) {
+-                setLoading(false);
+-                setServerErr('Some server Error');
+-            }
+-        };
+-        getQuiz();
+-    },[]);
++  useEffect(() => {
++    const id = window.location.pathname.split('/')[4];
++    const questionId = window.location.pathname.split('/')[6];
++    const getQuiz = async () => {
++      try {
++        setLoading(true);
++        const response = await axios.post(`/api/sundae/quizzes/${id}`);
++        if (response.data.quiz) {
++          const Question = response.data.quiz.questions;
++          setQuestion(Question);
++          const result = Question.find((item) => item.id === questionId);
++          setOneQuestion(result);
++        } else {
++          setServerErr(response.data.errorMessage);
++        }
++        setLoading(false);
++      } catch (e) {
++        setLoading(false);
++        setServerErr('Some server Error');
++      }
++    };
++    getQuiz();
++  }, []);
+ 
+-    return (
+-        <Layout quizNav flag={flag}>
+-            <Head>
+-                <title>Sundae - Question</title>
+-            </Head>
+-            <div>
+-                <AddQuizzes placeFlag question={oneQuestion} setFlag={setFlag} flag={flag}/>
+-            </div>
+-        </Layout>
+-    )
++  return (
++    <Layout quizNav flag={flag}>
++      <Head>
++        <title>Sundae - Question</title>
++      </Head>
++      <div>
++        <AddQuizzes placeFlag question={oneQuestion} setFlag={setFlag} flag={flag} />
++      </div>
++    </Layout>
++  );
+ };
+ 
+ export default QuestionId;
+Index: pages/series/[seriesId]/quizzes/[quizzesId]/result/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pages/series/[seriesId]/quizzes/[quizzesId]/result/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ pages/series/[seriesId]/quizzes/[quizzesId]/result/index.js	(date 1632892631895)
+@@ -1,22 +1,21 @@
+-import React, {useEffect, useState} from 'react';
+-import Layout from "../../../../../../Components/Layout/Layout";
+-import Head from "next/dist/next-server/lib/head";
+-import ResultCard from "../../../../../../Components/ResultCard";
++import React, { useState } from 'react';
++import Head from 'next/dist/next-server/lib/head';
++import Layout from '../../../../../../Components/Layout/Layout';
++import ResultCard from '../../../../../../Components/ResultCard';
+ 
+ const Result = () => {
+-
+-    const [flag, setFlag] = useState(false);
++  const [flag, setFlag] = useState(false);
+ 
+-    return(
+-        <Layout quizNav flag={flag}>
+-            <Head>
+-                <title>Sundae - Result</title>
+-            </Head>
+-            <div>
+-                <ResultCard setFlag={setFlag} flag={flag}/>
+-            </div>
+-        </Layout>
+-    )
++  return (
++    <Layout quizNav flag={flag}>
++      <Head>
++        <title>Sundae - Result</title>
++      </Head>
++      <div>
++        <ResultCard setFlag={setFlag} flag={flag} />
++      </div>
++    </Layout>
++  );
+ };
+ 
+ export default Result;
+Index: pages/series/[seriesId]/quizzes/[quizzesId]/edit/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pages/series/[seriesId]/quizzes/[quizzesId]/edit/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ pages/series/[seriesId]/quizzes/[quizzesId]/edit/index.js	(date 1632892568139)
+@@ -1,20 +1,17 @@
+ import React from 'react';
+-import Head from "next/dist/next-server/lib/head";
+-import Layout from "../../../../../../Components/Layout/Layout";
+-import EditQuizzes from "../../../../../../Components/EditQuizzes";
++import Head from 'next/dist/next-server/lib/head';
++import Layout from '../../../../../../Components/Layout/Layout';
++import EditQuizzes from '../../../../../../Components/EditQuizzes';
+ 
+-const Edit = () => {
+-
+-    return(
+-        <Layout quizNav >
+-            <Head>
+-                <title>Sundae - Edit</title>
+-            </Head>
+-            <div>
+-                <EditQuizzes />
+-            </div>
+-        </Layout>
+-    )
+-};
++const Edit = () => (
++  <Layout quizNav>
++    <Head>
++      <title>Sundae - Edit</title>
++    </Head>
++    <div>
++      <EditQuizzes />
++    </div>
++  </Layout>
++);
+ 
+ export default Edit;
+Index: Components/CardLoader/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Components/CardLoader/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ Components/CardLoader/index.js	(date 1632900549370)
+@@ -1,20 +1,18 @@
+-import React from "react"
+-import ContentLoader from "react-content-loader"
++import React from 'react';
++import ContentLoader from 'react-content-loader';
+ 
+ const CardLoader = (props) => (
+-    <ContentLoader
+-        speed={2}
+-        width={400}
+-        height={460}
+-        viewBox="0 0 400 460"
+-        backgroundColor="#f3f3f3"
+-        foregroundColor="#ecebeb"
+-        {...props}
+-    >
+-        <rect x="58" y="18" rx="2" ry="2" width="140" height="10" />
+-        <rect x="58" y="34" rx="2" ry="2" width="140" height="10" />
+-        <rect x="0" y="60" rx="2" ry="2" width="400" height="400" />
+-    </ContentLoader>
+-)
++  <ContentLoader
++    speed={2}
++    width={900}
++    height={700}
++    viewBox="0 0 400 460"
++    backgroundColor="#f3f3f3"
++    foregroundColor="#ecebeb"
++    {...props}
++  >
++    <rect x="0" y="60" rx="2" ry="2" width="400" height="400" />
++  </ContentLoader>
++);
+ 
+-export default CardLoader
++export default CardLoader;
+Index: pages/series/[seriesId]/quizzes/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pages/series/[seriesId]/quizzes/index.js	(revision 06fd26ea9a3d6b112a686eecbd3cdd5565cb1505)
++++ pages/series/[seriesId]/quizzes/index.js	(date 1632892631899)
+@@ -1,222 +1,224 @@
+ import React, { useState, useEffect } from 'react';
+ import { useSession } from 'next-auth/client';
+ import { useRouter } from 'next/router';
+-import Layout from "../../../../Components/Layout/Layout";
+-import Head from "next/dist/next-server/lib/head";
+-import {Alert, Col, Container, Modal, ModalBody, ModalHeader, Row, Spinner} from "reactstrap";
+-import styles from "./quizzes.module.scss";
+-import axios from "axios";
+-import {uploadToS3} from "../../../../services/uploadMedia";
+-import QuizzCard from "../../../../Components/QuizzCard";
+-import Dropzone from "react-dropzone";
+-import CardLoader from "../../../../Components/CardLoader";
++import Head from 'next/dist/next-server/lib/head';
++import {
++  Alert, Col, Container, Modal, ModalBody, ModalHeader, Row, Spinner
++} from 'reactstrap';
++import axios from 'axios';
++import Dropzone from 'react-dropzone';
++import Layout from '../../../../Components/Layout/Layout';
++import styles from './quizzes.module.scss';
++import { uploadToS3 } from '../../../../services/uploadMedia';
++import QuizzCard from '../../../../Components/QuizzCard';
++import CardLoader from '../../../../Components/CardLoader';
+ 
+ const Quizzes = () => {
+-    const router = useRouter();
+-    const [seriesId, setSeriesId] = useState("");
+-    const [session, loading] = useSession();
+-    const [isOpen, setOpen] = useState(false);
+-    const [isLoading, setLoading] = useState(false);
+-    const [quiz, setQuiz] = useState('');
+-    const [imgUrl, setImgUrl] = useState('');
+-    const [coverImg, setCoverImg] = useState('');
+-    const [quizzes, setQuizzes] = useState([]);
+-    const [serverErr, setServerErr] = useState(null);
+-    const [clientErr, setClientErr] = useState({
+-        name: '',
+-        coverImg: '',
+-    });
++  const router = useRouter();
++  const [seriesId, setSeriesId] = useState('');
++  const [session, loading] = useSession();
++  const [isOpen, setOpen] = useState(false);
++  const [isLoading, setLoading] = useState(false);
++  const [quiz, setQuiz] = useState('');
++  const [imgUrl, setImgUrl] = useState('');
++  const [coverImg, setCoverImg] = useState('');
++  const [quizzes, setQuizzes] = useState([]);
++  const [serverErr, setServerErr] = useState(null);
++  const [clientErr, setClientErr] = useState({
++    name: '',
++    coverImg: '',
++  });
+ 
+-    useEffect(()=>{
+-        const seriesId = window.location.pathname.split('/')[2];
+-        setSeriesId(seriesId)
+-        const getAllQuizzes = async () => {
+-            try {
+-                setLoading(true);
+-                const response = await axios.post('/api/sundae/quizzes');
+-                if (response.data.quizzes) {
+-                    setQuizzes(response.data.quizzes);
+-                } else {
+-                    setServerErr(response.data.errorMessage);
+-                    router.push(`/`);
+-                }
+-                setLoading(false);
+-            } catch (e) {
+-                setLoading(false);
+-                setServerErr('Some server Error');
+-                router.push(`/`);
+-            }
+-        };
+-        getAllQuizzes();
+-    },[]);
++  useEffect(() => {
++    const seriesId = window.location.pathname.split('/')[2];
++    setSeriesId(seriesId);
++    const getAllQuizzes = async () => {
++      try {
++        setLoading(true);
++        const response = await axios.post('/api/sundae/quizzes');
++        if (response.data.quizzes) {
++          setQuizzes(response.data.quizzes);
++        } else {
++          setServerErr(response.data.errorMessage);
++          router.push('/');
++        }
++        setLoading(false);
++      } catch (e) {
++        setLoading(false);
++        setServerErr('Some server Error');
++        router.push('/');
++      }
++    };
++    getAllQuizzes();
++  }, []);
+ 
+-    const setInitialErrors = () => {
+-        setClientErr({
+-            name: '',
+-            coverImg: '',
+-        });
+-        setServerErr(null);
+-    };
++  const setInitialErrors = () => {
++    setClientErr({
++      name: '',
++      coverImg: '',
++    });
++    setServerErr(null);
++  };
+ 
+-    const setInitialState = () => {
+-        setOpen(false);
+-        setQuiz('');
+-        setImgUrl('');
+-        setCoverImg('');
+-    };
++  const setInitialState = () => {
++    setOpen(false);
++    setQuiz('');
++    setImgUrl('');
++    setCoverImg('');
++  };
+ 
+-    const doAddQuiz = async (item) => {
+-        const errorsCopy = { ...clientErr };
+-        let isError = false;
+-        if (!quiz) {
+-            errorsCopy.name = 'Name is Required';
+-            isError = true;
+-        }
+-        if (!coverImg) {
+-            errorsCopy.coverImg = 'Cover Image is Required';
+-            isError = true;
+-        }
+-        if (isError) {
+-            setClientErr({ ...errorsCopy });
+-        }else {
+-            setLoading(true);
+-            try {
+-                const imageUrl = await uploadToS3(coverImg);
+-                const data = {
+-                    creatorId: session.user.sundaeUser.creator.id,
+-                    seriesId : seriesId,
+-                    quizType: 'DEFAULT',
+-                    title: quiz,
+-                    imageUrl: imageUrl,
+-                    isPublished: false,
+-                };
+-                const response = await axios.post('/api/sundae/quizzes/add', data);
+-                setLoading(false);
+-                console.log("response",response)
+-                router.push(`/series/${seriesId}/quizzes/${(response.data.quiz).id}/question`);
+-                setInitialState();
+-            } catch (e) {
+-                console.log(e);
+-                setLoading(false);
+-                setServerErr('some server error');
+-            }
+-        }
+-    };
++  const doAddQuiz = async (item) => {
++    const errorsCopy = { ...clientErr };
++    let isError = false;
++    if (!quiz) {
++      errorsCopy.name = 'Name is Required';
++      isError = true;
++    }
++    if (!coverImg) {
++      errorsCopy.coverImg = 'Cover Image is Required';
++      isError = true;
++    }
++    if (isError) {
++      setClientErr({ ...errorsCopy });
++    } else {
++      setLoading(true);
++      try {
++        const imageUrl = await uploadToS3(coverImg);
++        const data = {
++          creatorId: session.user.sundaeUser.creator.id,
++          seriesId,
++          quizType: 'DEFAULT',
++          title: quiz,
++          imageUrl,
++          isPublished: false,
++        };
++        const response = await axios.post('/api/sundae/quizzes/add', data);
++        setLoading(false);
++        console.log('response', response);
++        router.push(`/series/${seriesId}/quizzes/${(response.data.quiz).id}/question`);
++        setInitialState();
++      } catch (e) {
++        console.log(e);
++        setLoading(false);
++        setServerErr('some server error');
++      }
++    }
++  };
+ 
+-    return (
+-        <Layout>
+-            <Head>
+-                <title>Sundae - Quizzes</title>
+-            </Head>
+-                    <div className={styles.quizzes_container}>
+-                    {serverErr ? <Alert color="danger">{serverErr}</Alert> : ''}
+-                        <Container>
+-                            {
+-                                isLoading ? <CardLoader/> :
++  return (
++    <Layout>
++      <Head>
++        <title>Sundae - Quizzes</title>
++      </Head>
++      <div className={styles.quizzes_container}>
++        {serverErr ? <Alert color="danger">{serverErr}</Alert> : ''}
++        <Container>
++          {
++                                isLoading ? <CardLoader />
++                                  : (
+                                     <Row>
+-                                        <Col sm={12} md={3}>
+-                                            <div className={styles.add_quizzes_btn_container}>
+-                                                <div
+-                                                    onClick={() => setOpen(true)}
+-                                                    className={styles.add_quizzes_btn}
+-                                                >
+-                                                    <img src="/Assets/add_icon.png" alt="addIcon"/>
+-                                                </div>
+-                                                <p>Add Quiz</p>
+-                                            </div>
+-                                        </Col>
+-                                        {quizzes
+-                                            ? quizzes.map((item, i) => {
+-                                                return (
+-                                                    <QuizzCard quizzes={item}/>
+-                                                );
+-                                            })
+-                                            : ''}
++                                      <Col sm={12} md={3}>
++                                        <div className={styles.add_quizzes_btn_container}>
++                                          <div
++                                            onClick={() => setOpen(true)}
++                                            className={styles.add_quizzes_btn}
++                                          >
++                                            <img src="/Assets/add_icon.png" alt="addIcon" />
++                                          </div>
++                                          <p>Add Quiz</p>
++                                        </div>
++                                      </Col>
++                                      {quizzes
++                                        ? quizzes.map((item) => (
++                                          <QuizzCard quizzes={item} />
++                                        ))
++                                        : ''}
+ 
+                                     </Row>
++                                  )
+                             }
+-                            </Container>
+-                       <Modal
+-                                className="custom-modal"
+-                                centered
+-                                isOpen={isOpen}
+-                                toggle={() => setOpen(false)}
+-                            >
+-                                <ModalHeader
+-                                    className={styles.quizzes_modal_header}
+-                                    toggle={() => setOpen(false)}
+-                                >
+-                                    Add Quizzes
+-                                </ModalHeader>
+-                                <ModalBody>
+-                                    <div className={styles.quizzes_form_container}>
+-                                        <div className="form-input-container">
+-                                            <label>Name</label>
+-                                            <input
+-                                                type="text"
+-                                                placeholder="Enter Quiz"
+-                                                value={quiz}
+-                                                onChange={(e) => {
+-                                                    setInitialErrors();
+-                                                    setQuiz(e.target.value);
+-                                                }}
+-                                            />
+-                                            <small className="text-danger pl-2">
+-                                                {clientErr.name ? clientErr.name : ''}
+-                                            </small>
+-                                        </div>
+-                                    </div>
+-                                    <div className="form-input-container">
+-                                        <label>Cover Image</label>
+-                                        <Row>
+-                                            <Col sm={12} md={7}>
+-                                                <Dropzone
+-                                                    accept="image/*"
+-                                                    style={{width: '100%'}}
+-                                                    onDrop={(acceptedFiles) => {
+-                                                        setInitialErrors();
+-                                                        if (acceptedFiles && acceptedFiles.length < 1) {
+-                                                            setServerErr('Unsupported image -- Must be one of JPG/JPEG/PNG/SVG/GIF format!');
+-                                                        } else {
+-                                                            setImgUrl(URL.createObjectURL(acceptedFiles[0]));
+-                                                            setCoverImg(acceptedFiles[0]);
+-                                                        }
+-                                                    }}
+-                                                >
+-                                                    {({getRootProps, getInputProps}) => (
+-                                                        <section className="upload-file-container">
+-                                                            <div {...getRootProps()}>
+-                                                                <input {...getInputProps()} />
+-                                                                <img src="/Assets/image.png"/>
+-                                                                <p>Upload File JPG/JPEG/PNG/SVG/GIF</p>
+-                                                            </div>
+-                                                        </section>
+-                                                    )}
+-                                                </Dropzone>
+-                                                <small className="text-danger pl-2">
+-                                                    {clientErr.coverImg ? clientErr.coverImg : ''}
+-                                                </small>
+-                                            </Col>
+-                                            <Col sm={12} md={5}>
+-                                                <div className="preview-container">
+-                                                    {imgUrl ? <img src={imgUrl}/> : ''}
+-                                                </div>
+-                                            </Col>
+-                                        </Row>
+-                                    </div>
+-                                    <button
+-                                        type="button"
+-                                        onClick={(item) => doAddQuiz(item)}
+-                                        disabled={isLoading ? 'disabled' : ''}
+-                                        className="btn btn-dark btn-block"
+-                                    >
+-                                        {isLoading ? 'Loading...' : 'Add Quizzes'}
+-                                    </button>
+-                                </ModalBody>
+-                            </Modal>
+-                </div>
+-        </Layout>
+-    )
++        </Container>
++        <Modal
++          className="custom-modal"
++          centered
++          isOpen={isOpen}
++          toggle={() => setOpen(false)}
++        >
++          <ModalHeader
++            className={styles.quizzes_modal_header}
++            toggle={() => setOpen(false)}
++          >
++            Add Quizzes
++          </ModalHeader>
++          <ModalBody>
++            <div className={styles.quizzes_form_container}>
++              <div className="form-input-container">
++                <label>Name</label>
++                <input
++                  type="text"
++                  placeholder="Enter Quiz"
++                  value={quiz}
++                  onChange={(e) => {
++                    setInitialErrors();
++                    setQuiz(e.target.value);
++                  }}
++                />
++                <small className="text-danger pl-2">
++                  {clientErr.name ? clientErr.name : ''}
++                </small>
++              </div>
++            </div>
++            <div className="form-input-container">
++              <label>Cover Image</label>
++              <Row>
++                <Col sm={12} md={7}>
++                  <Dropzone
++                    accept="image/*"
++                    style={{ width: '100%' }}
++                    onDrop={(acceptedFiles) => {
++                          setInitialErrors();
++                          if (acceptedFiles && acceptedFiles.length < 1) {
++                            setServerErr('Unsupported image -- Must be one of JPG/JPEG/PNG/SVG/GIF format!');
++                          } else {
++                            setImgUrl(URL.createObjectURL(acceptedFiles[0]));
++                            setCoverImg(acceptedFiles[0]);
++                          }
++                        }}
++                  >
++                    {({ getRootProps, getInputProps }) => (
++                          <section className="upload-file-container">
++                                      <div {...getRootProps()}>
++                                         <input {...getInputProps()} />
++                                         <img src="/Assets/image.png" />
++                                         <p>Upload File JPG/JPEG/PNG/SVG/GIF</p>
++                                       </div>
++                                    </section>
++                        )}
++                  </Dropzone>
++                  <small className="text-danger pl-2">
++                    {clientErr.coverImg ? clientErr.coverImg : ''}
++                  </small>
++                </Col>
++                <Col sm={12} md={5}>
++                  <div className="preview-container">
++                    {imgUrl ? <img src={imgUrl} /> : ''}
++                  </div>
++                </Col>
++              </Row>
++            </div>
++            <button
++              type="button"
++              onClick={(item) => doAddQuiz(item)}
++              disabled={isLoading ? 'disabled' : ''}
++              className="btn btn-dark btn-block"
++            >
++              {isLoading ? 'Loading...' : 'Add Quizzes'}
++            </button>
++          </ModalBody>
++        </Modal>
++      </div>
++    </Layout>
++  );
+ };
+ 
+ export default Quizzes;

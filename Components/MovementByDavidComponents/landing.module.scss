@@ -1,0 +1,929 @@
+@media only screen and (min-width: 768px) {
+    .top_header_container {
+      position: relative;
+      max-width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #F9FCFD;
+      .sec_left {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .content_container {
+          width: 80%;
+          h6 {
+            font-family: Satisfy;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 66px;
+            // line-height: 98px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+            margin-bottom: 0;
+          }
+          h1 {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 3rem;
+            // line-height: 64px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+            margin-top: 0;
+          }
+          p {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 25px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+            margin-bottom: 0;
+            margin-top: 15px;
+          }
+          button {
+            width: 196px;
+            height: 62px;
+            background: #CD3400;
+            border-radius: 8px;
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            font-feature-settings: 'liga' off;
+            color: #ffffff;
+            margin-top: 1.8rem;
+            transition: 0.3s all ease-in;
+            &:hover {
+              background-color: #5104a9;
+            }
+          }
+        }
+      }
+      .sec_right {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem;
+        .big_ball {
+          position: absolute;
+          top: -2rem;
+          left: 9rem;
+          width: 670px;
+          height: 670px;
+          border-radius: 50%;
+          background: #CD3400;
+        }
+        .top_round_sm {
+        //   width: 72px;
+        // //   height: 72px;
+        // //   border-radius: 50%;
+        // // //   background: #ffc278;
+        // //   z-index: 999;
+        }
+        .img_container {
+          z-index: 999;
+          img {
+            max-width: 518px;
+          }
+        }
+        .bottom_round_sm {
+        //   z-index: 999;
+        //   width: 72px;
+        //   height: 72px;
+        //   border-radius: 50%;
+        //   background: #75e3ea;
+          //   align-self: center;
+          transform: translateX(6rem);
+        }
+      }
+    }
+    
+    .feature_list_container {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #FCF3E5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .content_container {
+        width: 80%;
+        padding: 3rem;
+    
+        .title_container {
+          width: 60%;
+          margin: 2rem auto;
+          h1 {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 40px;
+            line-height: 44px;
+            text-align: center;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+          }
+        }
+        .feature_item_container {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          // padding: 1rem;
+          margin: 1rem;
+          img {
+            max-width: 30px;
+            margin-bottom: 1rem;
+          }
+          h3 {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 32px;
+            text-align: center;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+          }
+          p {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1rem;
+            line-height: 26px;
+            text-align: center;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+          }
+        }
+      }
+    }
+    
+    .price_sec_container {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+      background-color: white;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .price_sec_content{
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        .price_card_container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          .price_card {
+            background-color: rgba(255, 255, 255, 0) !important;
+            background-image: url("/Assets/price_card.png");
+            background-size: contain!important;
+            background-position: center;
+            background-repeat: no-repeat!important;
+            width: 100%;
+            height: 80vh;
+            color: rgba(255, 255, 255, 0);
+            cursor: pointer;
+            .price_card_content{
+              width: 100%;
+              height: 100%;
+              .top_tag_container {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                p {
+                  width: 143px;
+                  font-family: Manrope;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 9px;
+                  text-align: center;
+                  letter-spacing: 0.833333px;
+                  color: #000000;
+                  background: #f8f3f0;
+                  border-radius: 13.5px;
+                  padding:5px;
+                }
+              }
+              .price_container {
+                display: flex;
+                align-items: center;
+                h2 {
+                  font-family: Manrope;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 26px;
+                  color: #000000;
+                  margin-bottom: 0;
+                }
+                span {
+                  font-size: 16px !important;
+                }
+              }
+              .title_container {
+                margin-top: 0rem;
+                h2 {
+                  font-family: Manrope;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 22px;
+                  color: #000000;
+                  margin-bottom: 0;
+                }
+                p {
+                  font-family: Manrope;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 12px;
+                  color: #000000;
+                }
+              }
+              .list_features {
+                list-style: none;
+                padding-inline-start: 0px !important;
+                li {
+                  font-family: Manrope;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 12px;
+                  color: #000000;
+                  margin-bottom: 15px;
+                  display: flex;
+                  align-items: center;
+                  p{
+                    margin-bottom: 0;
+                  }
+                  img {
+                    max-width: 15px;
+                    margin-right: 10px;
+                  }
+                }
+              }
+              .btn_container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                button {
+                  width: 80%;
+                  height: 40px;
+                  background: #fffffe;
+                  border-radius: 24px;
+                  font-family: Manrope;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 14px;
+                  text-align: center;
+                  color: #000000;
+                }
+              }
+            }
+          }
+        }
+        .price_img_container {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .topics_container {
+          width: 100%;
+          height: 100%;
+          padding: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          .content_container {
+            padding: 10px;
+            img{
+              width: 100%;
+              height: auto;
+            }
+            h6 {
+              font-family: Manrope;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 30px;
+              line-height: 32px;
+              color: #000000;
+              text-indent: 10px;
+            }
+            ul {
+              margin-top: 2rem;
+              li {
+                font-family: Manrope;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 20px;
+                line-height: 50px;
+                font-feature-settings: 'liga' off;
+                color: #000000;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .highlight_container {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+      background-color: #ffffff;
+      .content_sec {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .top_header {
+          h1 {
+            text-align: center;
+            font-family: Manrope;
+            font-size: 44px;
+            line-height: 64px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+          }
+          p {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 32px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+            text-align: center;
+            margin-top: 1.5rem;
+          }
+        }
+        .logos_sec {
+          margin-top: 5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .img_container{
+            position: relative;
+            span {
+              position: absolute;
+              top: -25px;
+              right: -15px;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: lightgray;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: 0.2s all ease;
+              img {
+                width: 10px;
+                margin-bottom: 0;
+              }
+              &:hover {
+                border-radius: 50%;
+                transform: scale(1.5);
+              }
+            }
+            img {
+              max-width: 170px;
+              filter: grayscale(80%);
+            }
+          }
+        }
+      }
+    }
+    
+    
+    
+    .carousal_container{
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background-color: #ffffff;
+      margin-top: 2rem;
+      .img_container{
+        position: relative;
+        span {
+          position: absolute;
+          top: 30px;
+          right: 30px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: 0.2s all ease;
+          img {
+            width: 15px;
+            margin-bottom: 0;
+          }
+          &:hover {
+            border-radius: 50%;
+            transform: scale(1.5);
+          }
+        }
+        img{
+          width: 100%;
+          height: 500px;
+          object-position: 50% 50%;
+          object-fit: fill;
+        }
+      }
+    }
+   }
+   @media only screen and (max-width: 767px) {
+    .top_header_container {
+      position: relative;
+      max-width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #F9FCFD;
+      padding-bottom: 1rem;
+      .sec_left {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .content_container {
+          width: 100%;
+          padding: 1rem;
+          h6 {
+            font-family: Satisfy;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 66px;
+            // line-height: 98px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+            margin-bottom: 0;
+          }
+          h1 {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 3rem;
+            // line-height: 64px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+            margin-top: 0;
+          }
+          p {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 25px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+            margin-bottom: 0;
+            margin-top: 15px;
+          }
+          button {
+            width: 196px;
+            height: 62px;
+            background: #CD3400;
+            border-radius: 8px;
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            font-feature-settings: 'liga' off;
+            color: #ffffff;
+            margin-top: 1.8rem;
+            transition: 0.3s all ease-in;
+            &:hover {
+              background-color: #5104a9;
+            }
+          }
+        }
+      }
+      .sec_right {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem;
+        .big_ball {
+          position: absolute;
+          top: -2rem;
+          left: 9rem;
+          width: 670px;
+          height: 670px;
+          border-radius: 50%;
+          background: #CD3400;
+        }
+        .top_round_sm {
+        //   width: 72px;
+        // //   height: 72px;
+        // //   border-radius: 50%;
+        // // //   background: #ffc278;
+        // //   z-index: 999;
+        }
+        .img_container {
+          z-index: 999;
+          img {
+            max-width: 518px;
+          }
+        }
+        .bottom_round_sm {
+        //   z-index: 999;
+        //   width: 72px;
+        //   height: 72px;
+        //   border-radius: 50%;
+        //   background: #75e3ea;
+          //   align-self: center;
+          transform: translateX(6rem);
+        }
+      }
+    }
+    
+    .feature_list_container {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #FCF3E5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .content_container {
+        width: 100%;
+        padding: 1rem;
+    
+        .title_container {
+          width: 100%;
+          margin: 2rem auto;
+          h1 {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 30px;
+            line-height: 44px;
+            text-align: center;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+          }
+        }
+        .feature_item_container {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1.5rem;
+          img {
+            max-width: 30px;
+            margin-bottom: 1rem;
+          }
+          h3 {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 32px;
+            text-align: center;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+          }
+          p {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 26px;
+            text-align: center;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+          }
+        }
+      }
+    }
+    
+    .price_sec_container {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+      background-color: white;
+      padding: 2rem;
+      .price_card_container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0rem;
+        .price_card {
+          background-color: rgba(255, 255, 255, 0) !important;
+          background-image: url("/Assets/price_card.png");
+          background-size: contain!important;
+          background-position: center;
+          background-repeat: no-repeat!important;
+          width: 100%;
+          height: 80vh;
+          color: rgba(255, 255, 255, 0);
+          cursor: pointer;
+          .top_tag_container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            p {
+              width: 163px;
+              font-family: Manrope;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 10px;
+              line-height: 14px;
+              text-align: center;
+              letter-spacing: 0.833333px;
+              color: #000000;
+              background: #f8f3f0;
+              border-radius: 13.5px;
+              padding: 0.5rem;
+            }
+          }
+          .price_container {
+            display: flex;
+            align-items: center;
+            h2 {
+              font-family: Manrope;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 36px;
+              line-height: 46px;
+              color: #000000;
+            }
+            span {
+              font-size: 18px !important;
+            }
+          }
+          .title_container {
+            margin-top: 1rem;
+            h2 {
+              font-family: Manrope;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 28px;
+              line-height: 38px;
+              color: #000000;
+              margin-bottom: 0;
+            }
+            p {
+              font-family: Manrope;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 15px;
+              line-height: 20px;
+              color: #000000;
+            }
+          }
+          .list_features {
+            list-style: none;
+            padding-inline-start: 0px !important;
+            li {
+              font-family: Manrope;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 15px;
+              line-height: 20px;
+              color: #000000;
+              margin-bottom: 1rem;
+              display: flex;
+              align-items: center;
+              p{
+                margin-bottom: 0;
+              }
+              img {
+                margin-right: 10px;
+              }
+            }
+          }
+          .btn_container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button {
+              width: 90%;
+              height: 60px;
+              background: #fffffe;
+              border-radius: 24px;
+              font-family: Manrope;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 15px;
+              line-height: 20px;
+              text-align: center;
+              color: #000000;
+            }
+          }
+        }
+      }
+      .price_img_container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .topics_container {
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .content_container {
+          padding: 10px;
+          img{
+            width: 100%;
+            height: auto;
+          }
+          h6 {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 32px;
+            color: #000000;
+            text-indent: 10px;
+          }
+          ul {
+            margin-top: 2rem;
+            li {
+              font-family: Manrope;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 20px;
+              line-height: 50px;
+              font-feature-settings: 'liga' off;
+              color: #000000;
+            }
+          }
+        }
+      }
+    }
+    
+    .highlight_container {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+      background-color: #ffffff;
+      .content_sec {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .top_header {
+          h1 {
+            text-align: center;
+            font-family: Manrope;
+            font-size: 44px;
+            line-height: 64px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+          }
+          p {
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 32px;
+            font-feature-settings: 'liga' off;
+            color: #18191f;
+            text-align: center;
+            margin-top: 1.5rem;
+          }
+        }
+        .logos_sec {
+          margin-top: 5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .img_container{
+            position: relative;
+            span {
+              position: absolute;
+              top: -25px;
+              right: -15px;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: lightgray;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              transition: 0.2s all ease;
+              img {
+                width: 10px;
+                margin-bottom: 0;
+              }
+              &:hover {
+                border-radius: 50%;
+                transform: scale(1.5);
+              }
+            }
+            img {
+              max-width: 170px;
+              filter: grayscale(80%);
+            }
+          }
+        }
+      }
+    }
+    
+    
+    
+    .carousal_container{
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background-color: #ffffff;
+      margin-top: 2rem;
+      .img_container{
+        position: relative;
+        span {
+          position: absolute;
+          top: 30px;
+          right: 30px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: 0.2s all ease;
+          img {
+            width: 15px;
+            margin-bottom: 0;
+          }
+          &:hover {
+            border-radius: 50%;
+            transform: scale(1.5);
+          }
+        }
+        img{
+          width: 100%;
+          height: 500px;
+          object-position: 50% 50%;
+          object-fit: fill;
+        }
+      }
+    }
+   }

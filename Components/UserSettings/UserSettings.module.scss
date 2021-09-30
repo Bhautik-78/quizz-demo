@@ -1,0 +1,15 @@
+.usersettings_container {
+  max-width: 80%;
+  height: auto;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  padding: 1rem;
+  .edit_user_settings_container {
+    width: 100%;
+  }
+  .btn_container {
+    max-width: 80%;
+    margin: 2rem auto;
+  }
+}

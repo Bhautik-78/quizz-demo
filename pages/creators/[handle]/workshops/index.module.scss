@@ -1,0 +1,54 @@
+@media only screen and (min-width: 768px) {
+    .landing_container{
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+        overflow: hidden;
+        background: white;
+        .preview_container{
+            // position: fixed;
+            // top: 0;
+            // left: 0;
+            color: white;
+            background-color: darkred;
+            padding: 10px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            display: inline-block;
+            img{
+                max-width: 20px;
+                cursor: pointer;
+                margin-right: 1rem;
+            }
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 767px) {
+    .landing_container{
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+        overflow: hidden;
+        background: white;
+        .preview_container{
+            // position: fixed;
+            // top: 0;
+            // left: 0;
+            color: white;
+            background-color: darkred;
+            padding: 10px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            display: inline-block;
+            img{
+                max-width: 20px;
+                cursor: pointer;
+                margin-right: 1rem;
+            }
+        }
+    }   
+}

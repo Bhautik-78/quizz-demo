@@ -1,0 +1,166 @@
+.landing_container {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  .after_header_container {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fffcf7;
+    padding: 3rem;
+    .content_container {
+      max-width: 70%;
+      h3 {
+        font-family: Manrope;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 35px;
+        line-height: 64px;
+        text-align: center;
+        font-feature-settings: 'liga' off;
+        color: #18191f;
+        text-align: center;
+      }
+    }
+    button {
+      width: 196px;
+      height: 62px;
+      background: #5243c2;
+      border-radius: 8px;
+      font-family: Manrope;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      font-feature-settings: 'liga' off;
+      color: #ffffff;
+      margin-top: 1.8rem;
+      transition: 0.3s all ease-in;
+      &:hover {
+        background-color: #5104a9;
+      }
+    }
+  }
+}
+
+.join_list_modal {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #fff7f7;
+  padding: 4rem;
+  .cross_icon{
+    position: absolute;
+    right: 2rem;
+    margin-top: -2rem;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    h1 {
+      text-align: center;
+    }
+  }
+  .modal_body {
+    width: 100%;
+    .btn_container {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+    .landing_container {
+        max-width: 100%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        .after_header_container {
+          max-width: 100%;
+          height: auto;
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: #fffcf7;
+          padding: 2rem;
+          .content_container {
+            max-width: 100%;
+            h3 {
+              font-family: Manrope;
+              font-style: normal;
+              font-weight: 800;
+              font-size: 22px;
+              line-height: 40px;
+              text-align: center;
+              font-feature-settings: 'liga' off;
+              color: #18191f;
+              text-align: center;
+            }
+          }
+          button {
+            width: 196px;
+            height: 62px;
+            background: #5243c2;
+            border-radius: 8px;
+            font-family: Manrope;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            font-feature-settings: 'liga' off;
+            color: #ffffff;
+            margin-top: 1.8rem;
+            transition: 0.3s all ease-in;
+            &:hover {
+              background-color: #5104a9;
+            }
+          }
+        }
+      }  
+
+      .join_list_modal {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: #fff7f7;
+        padding: 2rem;
+        .cross_icon{
+          position: absolute;
+          right: 2rem;
+          margin-top: -1rem;
+          font-size: 20px;
+          cursor: pointer;
+        }
+        .modal_header {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1rem;
+          h1 {
+            font-size: 24px;
+            text-align: center;
+          }
+        }
+        .modal_body {
+          width: 100%;
+          .btn_container {
+            width: 100%;
+            margin-top: 2rem;
+          }
+        }
+      }
+      
+}
